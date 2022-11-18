@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="storyBlockQueue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -30,19 +27,22 @@
     <ClCompile Include="gameManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="storyBlolckQueue.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="storyBlock.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="gameManager.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>소스 파일</Filter>
+      <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="gameManager.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="storyBlock.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="storyBlolckQueue.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

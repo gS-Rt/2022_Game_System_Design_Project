@@ -10,7 +10,6 @@
 #include "gameManager.h"
 using namespace std;
 
-
 int main()
 {
     GameManager gameManager; //게임 진행 관리 클래스
