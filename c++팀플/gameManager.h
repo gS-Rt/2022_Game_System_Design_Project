@@ -17,7 +17,6 @@ private:
     Player player; //플레이어 능력치 관리 클래스
     StoryBlock* selectedStoryblock; //스토리 블록 생성 저장 변수
 
-
 public:
     void selectNextBlock();
 
