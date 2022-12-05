@@ -22,7 +22,13 @@ protected:
     int pri; //직전에 삽입된 블록 인덱스 숫자
 
 public:
-    GameManager();
+    GameManager()
+    {
+        queue = new StoryQueue;
+        runCycle = 0;
+        pri = -1;
+        num = 0;
+    }
 
     void startGame();
 

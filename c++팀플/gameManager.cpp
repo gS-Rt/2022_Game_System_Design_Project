@@ -11,15 +11,6 @@
 #include "player.h"
 using namespace std;
 
-GameManager::GameManager()
-{
-    queue = new StoryQueue;
-    runCycle = 0;
-    pri = -1;
-    num = 0;
-
-}
-
 void GameManager::selectNextBlock()
 {
     StoryBlock* selectBlock = NULL;
