@@ -19,7 +19,9 @@ void StoryQueue::inqueue(StoryBlock* storyBlock)
         return;
     }
     while (temp->getNext() != NULL)
+    {
         temp = temp->getNext();
+    }
     temp->setNext(storyBlock);
 }
 

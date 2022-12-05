@@ -13,35 +13,42 @@ StoryBlock::StoryBlock()
     this->script = "스크립트 입력 없음";
 }
 
-StoryBlock::StoryBlock(int blockType, string script, string select1, int statType1, int changeValue1, string result1)
+StoryBlock::StoryBlock(int blockType, string script, string select1, vector<int> statType1, vector<int> changeValue1, string result1)
 {
     this->blockType = blockType;
     this->script = script;
     this->select1 = select1;
 
-    this->statType[0] = statType1;
-    this->changeValue[0] = changeValue1;
+    for (int i = 0; i < statType1.size(); i++)
+        this->statType1.push_back(statType1[i]);
+    for (int i = 0; i < changeValue1.size(); i++)
+        this->statType1.push_back(changeValue1[i]);
 
     this->result1 = result1;
 }
 
-StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, int statType1, int changeValue1, int statType2, int changeValue2, string result1, string result2)
+StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, string result1, string result2)
 {
     this->blockType = blockType;
     this->script = script;
     this->select1 = select1;
     this->select2 = select2;
 
-    this->statType[0] = statType1;
-    this->changeValue[0] = changeValue1;
-    this->statType[1] = statType2;
-    this->changeValue[1] = changeValue2;
+    for (int i = 0; i < statType1.size(); i++)
+        this->statType1.push_back(statType1[i]);
+    for (int i = 0; i < changeValue1.size(); i++)
+        this->statType1.push_back(changeValue1[i]);
+
+    for (int i = 0; i < statType2.size(); i++)
+        this->statType2.push_back(statType2[i]);
+    for (int i = 0; i < changeValue2.size(); i++)
+        this->statType2.push_back(changeValue2[i]);
 
     this->result1 = result1;
     this->result2 = result2;
 }
 
-StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, string select3, int statType1, int changeValue1, int statType2, int changeValue2, int statType3, int changeValue3, string result1, string result2, string result3)
+StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, string select3, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, vector<int> statType3, vector<int> changeValue3, string result1, string result2, string result3)
 {
     this->blockType = blockType;
     this->script = script;
@@ -49,12 +56,20 @@ StoryBlock::StoryBlock(int blockType, string script, string select1, string sele
     this->select2 = select2;
     this->select3 = select3;
 
-    this->statType[0] = statType1;
-    this->changeValue[0] = changeValue1;
-    this->statType[1] = statType2;
-    this->changeValue[1] = changeValue2;
-    this->statType[2] = statType3;
-    this->changeValue[2] = changeValue3;
+    for (int i = 0; i < statType1.size(); i++)
+        this->statType1.push_back(statType1[i]);
+    for (int i = 0; i < changeValue1.size(); i++)
+        this->statType1.push_back(changeValue1[i]);
+
+    for (int i = 0; i < statType2.size(); i++)
+        this->statType2.push_back(statType2[i]);
+    for (int i = 0; i < changeValue2.size(); i++)
+        this->statType2.push_back(changeValue2[i]);
+
+    for (int i = 0; i < statType3.size(); i++)
+        this->statType3.push_back(statType3[i]);
+    for (int i = 0; i < changeValue3.size(); i++)
+        this->statType3.push_back(changeValue3[i]);
 
     this->result1 = result1;
     this->result2 = result2;

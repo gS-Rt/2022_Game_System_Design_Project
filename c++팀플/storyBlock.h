@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h>
+#include <vector>
 using namespace std;
 
 class StoryBlock //스토리 블록 클래스
@@ -20,8 +21,13 @@ private:
     string result2;
     string result3; //각 선택지 선택했을 때 결과 스크립트
 
-    int statType[3];
-    int changeValue[3];
+    vector<int> statType1;
+    vector<int> changeValue1;
+    vector<int> statType2;
+    vector<int> changeValue2;
+    vector<int> statType3;
+    vector<int> changeValue3;
+
     int playerSelect;
     StoryBlock* nextBlock;
     int selectCount;
@@ -32,9 +38,10 @@ private:
     */
 public:
     StoryBlock();
-    StoryBlock(int blockType, string script, string select1, int statType1, int changeValue1, string result1); //블록 타입 지정 후 스크립트, 선택지 입력, 0은 일반 스토리 블럭
-    StoryBlock(int blockType, string script, string select1, string select2, int statType1, int changeValue1, int statType2, int changeValue2, string result1, string result2);
-    StoryBlock(int blockType, string script, string select1, string select2, string select3, int statType1, int changeValue1, int statType2, int changeValue2, int statType3, int changeValue3, string result1, string result2, string result3);
+    StoryBlock(int blockType, string script, string select1, vector<int> statType1, vector<int> changeValue1, string result1); //블록 타입 지정 후 스크립트, 선택지 입력, 0은 일반 스토리 블럭
+    //블록 타입, 스토리 스크립트, 선택지1, 선택지1이 바꿀 스탯 종류, 선택지1이 바꿀 증감량, 선택지1 선택 이후 출력된 스크립트
+    StoryBlock(int blockType, string script, string select1, string select2, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, string result1, string result2);
+    StoryBlock(int blockType, string script, string select1, string select2, string select3, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, vector<int> statType3, vector<int> changeValue3, string result1, string result2, string result3);
     //선택지에 따라 생성자 다양화
     //statType는 해당 선택지가 변경할 스탯, changeValue는 해당 선택지가 변경할 양
     //ex) 0, -3 은 해당 선택지 선택 시 hp 3 감소
@@ -58,5 +65,16 @@ public:
     {
         nextBlock = next;
     }
+    virtual void storyBlockFunction();
 
 };
+
+/*필요한 것
+* 스크립트
+* 선택지 1~n
+* 선택지에 따라 달라지는 스탯 증감 종류, 수치
+* 선택지에 따른 선택 후 나오는 결과 스크립트
+*-> 추상 클래스로 만들어서 스토리 블록마다 오버라이딩
+*or 선택지에 따라 달라지는 스탯 종류 2차원 배열, 증감 수치 2차원 배열
+* 
+*/
