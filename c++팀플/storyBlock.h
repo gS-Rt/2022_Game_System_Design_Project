@@ -6,12 +6,14 @@
 #include <string>
 #include <stdlib.h>
 #include <vector>
+#include "player.h"
 using namespace std;
+
+class StoryQueue;
 
 class StoryBlock //스토리 블록 클래스
 {
-private:
-    int blockType; //0:일반 스토리 블록, 1:연계 스토리 블록, 3:메인 스토리 블록
+protected:
     string script; //스토리 스크립트
     string select1; //선택지 1~3개
     string select2;
@@ -21,42 +23,17 @@ private:
     string result2;
     string result3; //각 선택지 선택했을 때 결과 스크립트
 
-    vector<int> statType1;
-    vector<int> changeValue1;
-    vector<int> statType2;
-    vector<int> changeValue2;
-    vector<int> statType3;
-    vector<int> changeValue3;
+    int playerSelect; //플레이어 선택지 입력 값
+    int selectCount; //선택지 개수, 선택지 출력 시 값 생성, 플레이어 입력값 제한에 사용
 
-    int playerSelect;
-    StoryBlock* nextBlock;
-    int selectCount;
-    /*
-    * 블록 타입에 따라 어떤 능력치들을 얼만큼 증감시킬껀지 정해야할 듯 합니다.
-    * 선택지도 첫번째는 증가
-    * 예) blockType=2 : 
-    */
+    StoryBlock* nextBlock; //블록 큐 연결링크
 public:
-    StoryBlock();
-    StoryBlock(int blockType, string script, string select1, vector<int> statType1, vector<int> changeValue1, string result1); //블록 타입 지정 후 스크립트, 선택지 입력, 0은 일반 스토리 블럭
-    //블록 타입, 스토리 스크립트, 선택지1, 선택지1이 바꿀 스탯 종류, 선택지1이 바꿀 증감량, 선택지1 선택 이후 출력된 스크립트
-    StoryBlock(int blockType, string script, string select1, string select2, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, string result1, string result2);
-    StoryBlock(int blockType, string script, string select1, string select2, string select3, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, vector<int> statType3, vector<int> changeValue3, string result1, string result2, string result3);
-    //선택지에 따라 생성자 다양화
-    //statType는 해당 선택지가 변경할 스탯, changeValue는 해당 선택지가 변경할 양
-    //ex) 0, -3 은 해당 선택지 선택 시 hp 3 감소
-    //선택 이후 양수 값이면 긍정적인 말을, 음수 값이면 부정적인 멘트 출력
-    /*ex)
-    * 당신은 길에서 포악한 고블린을 만났습니다. 싸울까요?
-    * 1. 싸운다
-    * 2. 못본척 하고 지나간다.
-    * 입력:
-    * ->1번 선택 시, hp 감소
-    * ->2번 선택 시, 
-    */
-    void printNormalBlock();
-    void scanPlayerInput();
-
+    StoryBlock()
+    {
+        nextBlock = NULL;
+        playerSelect = 0;
+        selectCount = 0;
+    }
     StoryBlock* getNext() //큐 관련 메소드
     {
         return this->nextBlock;
@@ -65,16 +42,10 @@ public:
     {
         nextBlock = next;
     }
-    virtual void storyBlockFunction();
+
+    void printBlock(); //스크립트 및 선택지 출력
+    void scanPlayerInput(); //값 입력 받는 함수
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //블록의 스탯 변화 코드 작성용 가상함수
+    void printResult();
 
 };
-
-/*필요한 것
-* 스크립트
-* 선택지 1~n
-* 선택지에 따라 달라지는 스탯 증감 종류, 수치
-* 선택지에 따른 선택 후 나오는 결과 스크립트
-*-> 추상 클래스로 만들어서 스토리 블록마다 오버라이딩
-*or 선택지에 따라 달라지는 스탯 종류 2차원 배열, 증감 수치 2차원 배열
-* 
-*/

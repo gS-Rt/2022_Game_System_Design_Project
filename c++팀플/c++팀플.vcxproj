@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="storyBlock.cpp" />
+    <ClCompile Include="storyBlockQueue.cpp" />
+    <ClCompile Include="stroyBlockDataSet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameManager.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="storyBlock.h" />
+    <ClInclude Include="storyBlolckQueue.h" />
+    <ClInclude Include="stroyBlockDataSet.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -127,19 +142,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="gameManager.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="storyBlock.cpp" />
-    <ClCompile Include="storyBlockQueue.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="gameManager.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="storyBlock.h" />
-    <ClInclude Include="storyBlolckQueue.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

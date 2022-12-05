@@ -6,80 +6,13 @@
 #include <string>
 #include <stdlib.h>
 #include "storyBlock.h"
+#include "storyBlolckQueue.h"
 using namespace std;
 
-StoryBlock::StoryBlock()
-{
-    this->script = "스크립트 입력 없음";
-}
-
-StoryBlock::StoryBlock(int blockType, string script, string select1, vector<int> statType1, vector<int> changeValue1, string result1)
-{
-    this->blockType = blockType;
-    this->script = script;
-    this->select1 = select1;
-
-    for (int i = 0; i < statType1.size(); i++)
-        this->statType1.push_back(statType1[i]);
-    for (int i = 0; i < changeValue1.size(); i++)
-        this->statType1.push_back(changeValue1[i]);
-
-    this->result1 = result1;
-}
-
-StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, string result1, string result2)
-{
-    this->blockType = blockType;
-    this->script = script;
-    this->select1 = select1;
-    this->select2 = select2;
-
-    for (int i = 0; i < statType1.size(); i++)
-        this->statType1.push_back(statType1[i]);
-    for (int i = 0; i < changeValue1.size(); i++)
-        this->statType1.push_back(changeValue1[i]);
-
-    for (int i = 0; i < statType2.size(); i++)
-        this->statType2.push_back(statType2[i]);
-    for (int i = 0; i < changeValue2.size(); i++)
-        this->statType2.push_back(changeValue2[i]);
-
-    this->result1 = result1;
-    this->result2 = result2;
-}
-
-StoryBlock::StoryBlock(int blockType, string script, string select1, string select2, string select3, vector<int> statType1, vector<int> changeValue1, vector<int> statType2, vector<int> changeValue2, vector<int> statType3, vector<int> changeValue3, string result1, string result2, string result3)
-{
-    this->blockType = blockType;
-    this->script = script;
-    this->select1 = select1;
-    this->select2 = select2;
-    this->select3 = select3;
-
-    for (int i = 0; i < statType1.size(); i++)
-        this->statType1.push_back(statType1[i]);
-    for (int i = 0; i < changeValue1.size(); i++)
-        this->statType1.push_back(changeValue1[i]);
-
-    for (int i = 0; i < statType2.size(); i++)
-        this->statType2.push_back(statType2[i]);
-    for (int i = 0; i < changeValue2.size(); i++)
-        this->statType2.push_back(changeValue2[i]);
-
-    for (int i = 0; i < statType3.size(); i++)
-        this->statType3.push_back(statType3[i]);
-    for (int i = 0; i < changeValue3.size(); i++)
-        this->statType3.push_back(changeValue3[i]);
-
-    this->result1 = result1;
-    this->result2 = result2;
-    this->result3 = result3;
-}
-
-void StoryBlock::printNormalBlock()
+void StoryBlock::printBlock() //스크립트와 선택지 출력
 {
     selectCount = 0;
-    cout << script << endl << endl;
+    cout << endl << script << endl << endl;
     if (!select1.empty())
     {
         cout << "1. " << select1 << endl;
@@ -97,7 +30,7 @@ void StoryBlock::printNormalBlock()
     }
 }
 
-void StoryBlock::scanPlayerInput()
+void StoryBlock::scanPlayerInput() //선택 입력
 {
     while (1)
     {
@@ -112,4 +45,23 @@ void StoryBlock::scanPlayerInput()
         break;
     }
     cout << endl;
+}
+
+void StoryBlock::printResult() //결과문 출력, 오버라이딩으로 조건에 따라 변경 가능
+{
+    if(playerSelect==1)
+        cout << endl << result1 << endl;
+    else if (playerSelect == 2)
+        cout << endl << result2 << endl;
+    else
+        cout << endl << result3 << endl;
+
+    cout << endl;
+    Sleep(1000);
+    system("pause");
+}
+
+void StoryBlock::storyBlockFunction(Player& player, StoryQueue* queue)
+{
+    return;
 }
