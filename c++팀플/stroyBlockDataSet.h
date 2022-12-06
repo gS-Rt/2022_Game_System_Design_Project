@@ -56,7 +56,6 @@ public:
         select1 = "맞서 싸운다."; //선택지 1
         select2 = "돈을 건내준다."; //선택지 2(선택)
         select3 = "도망간다."; //선택지 3(선택)
-
         result1 = "상당한 상처를 입었지만 강도들을 모두 처리했다. 그들이 가지고있던 돈과 지도를 얻었다."; //HP 깎임, 돈+,정보력+
         result2 = "아무리 정식 훈련을 받은 병사라도 혼자서 셋을 이길수는 없다. 그들과 협상을하여 조금의 돈만주고 살아남았다."; //돈 -100, 협상력 + 
         result3 = "약간의 피해를 입긴 했지만 성공적으로 도망쳤다."; //HP-,침투럭 +
@@ -98,7 +97,7 @@ public:
         result3 = "습격했지만 예상보다 너무 많은 도적이 기다리고 있었다. 상당한 피해를 입고 도망쳤다."; //hp -3
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
 };
 class Block5 :public StoryBlock
 {
@@ -161,6 +160,24 @@ public:
     Block8()
     {
         script = "정답일세! 보기보단 머리가 좋군그래. 보상으로 당신이 원하는 것 하나를 들어주겠네. 무엇을 원하는가?"; //스크립트 초기화
+
+        select1 = "돈"; //선택지 1
+        select2 = "내구력"; //선택지 2(선택)
+        select3 = "지력"; //선택지 3(선택)
+
+        result1 = "나그네는 돈을주고 떠났다.."; //돈 +300
+        result2 = "나그네는 신비한 포션을 주고 떠났다. 포션을 마시니 힘과 체력이 올라간 느낌이 든다."; //hp+3,힘+2
+        result3 = "나그네는 신비한 포션을 주고 떠났다. 포션을 마시니 몸의 움직임과 어휘력이 올라간 느낌이 든다."; //카리스마+2,잠입능력+2
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
+};
+class Block9 :public StoryBlock
+{
+public:
+    Block9()
+    {
+        script = "스크립트트트"; //스크립트 초기화
 
         select1 = "돈"; //선택지 1
         select2 = "내구력"; //선택지 2(선택)
