@@ -30,9 +30,9 @@ void StoryBlock::printResult()
 
 void Block1::storyBlockFunction(Player& player)
 {
-    //여러 값 변경 코드 작성
-    player.changeStat("hp", 10); //hp 10증가 코드 예시
 
+    player.changeStat("hp", 10); //hp 10증가 코드 예시
+    
     //queue.dequeue();
     cout << "디버깅용 hp 출력: " << player.peekStat("hp");
 }
