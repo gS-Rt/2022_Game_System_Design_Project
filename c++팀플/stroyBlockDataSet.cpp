@@ -126,15 +126,39 @@ void Block7::storyBlockFunction(Player& player,StoryQueue* queue)
 void Block9::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("hp", -2);
-    player.changeStat("power", 1);
-    player.changeStat("charisma", -3);
+    player.changeStat("penetration", 1);
+    }
+    else if (playerSelect == 2)
+    {
+    player.changeStat("wealth", 100);
+    }
+    else
+    player.changeStat("hp", -1);
+    player.changeStat("penetration", 1);
+}
+
+void Block10::storyBlockFunction(Player& player)
+{
+    if(playerSelect==1){
+    player.changeStat("hp", -4);
     }
     else if (playerSelect == 2)
     {
     player.changeStat("wealth", -100);
-    player.changeStat("information", 1);
     }
     else
-    player.changeStat("hp", 1);
+    player.changeStat("information", 2);
+}
+
+void Block11::storyBlockFunction(Player& player)
+{
+    if(playerSelect==1){
+    player.changeStat("charisma", 2);
+    }
+    else if (playerSelect == 2)
+    {
+    player.changeStat("wealth", 300);
+    }
+    else
+    player.changeStat("information", 2);
 }
