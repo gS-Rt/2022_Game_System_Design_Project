@@ -170,7 +170,7 @@ public:
         result3 = "나그네는 신비한 포션을 주고 떠났다. 포션을 마시니 몸의 움직임과 어휘력이 올라간 느낌이 든다."; //카리스마+2,잠입능력+2
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
 };
 class Block9 :public StoryBlock
 {
