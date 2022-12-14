@@ -9,7 +9,7 @@
 #include "storyBlolckQueue.h"
 using namespace std;
 
-void StoryBlock::printBlock() //½ºÅ©¸³Æ®¿Í ¼±ÅÃÁö Ãâ·Â
+void StoryBlock::printBlock() //ìŠ¤í¬ë¦½íŠ¸ì™€ ì„ íƒì§€ ì¶œë ¥
 {
     selectCount = 0;
     cout << endl << script << endl << endl;
@@ -30,16 +30,16 @@ void StoryBlock::printBlock() //½ºÅ©¸³Æ®¿Í ¼±ÅÃÁö Ãâ·Â
     }
 }
 
-void StoryBlock::scanPlayerInput() //¼±ÅÃ ÀÔ·Â
+void StoryBlock::scanPlayerInput() //ì„ íƒ ì…ë ¥
 {
     while (1)
     {
-        cout << endl << "´ç½ÅÀÇ ¼±ÅÃÀº... ";
+        cout << endl << "ë‹¹ì‹ ì˜ ì„ íƒì€... ";
         cin >> playerSelect;
 
         if ((selectCount < playerSelect) || (playerSelect <= 0))
         {
-            cout << endl << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ¿ÇÀº ¼±ÅÃÁö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.";
+            cout << endl << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ì˜³ì€ ì„ íƒì§€ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”."; //ì •ìˆ˜ ì•„ë‹ë•Œë„ 
             continue;
         }
         break;
@@ -47,7 +47,7 @@ void StoryBlock::scanPlayerInput() //¼±ÅÃ ÀÔ·Â
     cout << endl;
 }
 
-void StoryBlock::printResult() //°á°ú¹® Ãâ·Â, ¿À¹ö¶óÀÌµùÀ¸·Î Á¶°Ç¿¡ µû¶ó º¯°æ °¡´É
+void StoryBlock::printResult() //ê²°ê³¼ë¬¸ ì¶œë ¥, ì˜¤ë²„ë¼ì´ë”©ìœ¼ë¡œ ì¡°ê±´ì— ë”°ë¼ ë³€ê²½ ê°€ëŠ¥
 {
     if(playerSelect==1)
         cout << endl << result1 << endl;
