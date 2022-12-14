@@ -67,7 +67,7 @@ void GameManager::startGame()
 
         selectNextBlock();
         runStoryBlock();
-        cout << "디버깅용 진행된 블록 수: " << runCycle << endl;
+        cout << "체력: " << player.peekStat("hp")<<" , 돈: "<< player.peekStat("money") << endl;
 
         if (runCycle == 5) //5턴 종료 후 block4 확정 삽입, 이 로직으로 진행 중 필수 블록 삽입 가능
         {

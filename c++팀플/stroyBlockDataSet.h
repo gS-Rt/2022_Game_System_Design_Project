@@ -26,7 +26,7 @@ public:
         result3 = "상인인 그의 가방을 뺏으려고 시도하다 야수가 덮쳤다. 살아남고 그가 가진 가방또한 강탈하긴 했지만 상당히 다치고 카리스마가 하락하였다."; //선택지 3 결과(선택)
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block1 :public StoryBlock
 {
@@ -44,7 +44,7 @@ public:
         result3 = "군인을 설득과 협박을 하여 결국 납치는 막았다. 군인은 나의 얼굴을 기억하겠다고 하면서 떠났다. 카리스마가 조금 상승하였다."; //선택지 3 결과(선택)
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block2 :public StoryBlock
 {
@@ -61,7 +61,7 @@ public:
         result3 = "약간의 피해를 입긴 했지만 성공적으로 도망쳤다."; //HP-,침투럭 +
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block3 :public StoryBlock
 {
@@ -79,7 +79,7 @@ public:
         result3 = "그의 여정을 응원하며 떠났다."; //none
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block4 :public StoryBlock
 {
@@ -97,7 +97,7 @@ public:
         result3 = "습격했지만 예상보다 너무 많은 도적이 기다리고 있었다. 상당한 피해를 입고 도망쳤다."; //hp -3
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block5 :public StoryBlock
 {

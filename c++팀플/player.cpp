@@ -12,9 +12,10 @@ Player::Player()
 {
     hp = 0;
     power = 0;
-    wealth = 0;
+    money = 0;
     charisma = 0;
     penetration = 0;
+
 }
 int Player::peekStat(string type) //참조할 스탯 데이터 이름 매개로 넣으면 반환
 {
@@ -22,8 +23,8 @@ int Player::peekStat(string type) //참조할 스탯 데이터 이름 매개로 넣으면 반환
         return hp;
     else if (type == "power")
         return power;
-    else if (type == "wealth")
-        return wealth;
+    else if (type == "money")
+        return money;
     else if (type == "charisma")
         return charisma;
     else if (type == "penetration")
@@ -37,8 +38,8 @@ void Player::changeStat(string type, int data) //바꿀 스탯 타입과 변경할 값 입력
         hp += data;
     else if (type == "power")
         power += data;
-    else if (type == "wealth")
-        wealth += data;
+    else if (type == "money")
+        money += data;
     else if (type == "charisma")
         charisma += data;
     else if (type == "penetration")

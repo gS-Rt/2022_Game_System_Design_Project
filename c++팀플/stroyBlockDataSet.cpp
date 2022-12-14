@@ -12,18 +12,18 @@
 using namespace std;
 
 
-void Block0::storyBlockFunction(Player& player)
+void Block0::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
         player.changeStat("hp", -2);
-        player.changeStat("wealth",200);
+        player.changeStat("money",200);
     }
     else if (playerSelect == 2)
         player.changeStat("penetration", 2);
     else {
         player.changeStat("hp",-3);
         player.changeStat("charisma",-2);
-        player.changeStat("wealth",300);
+        player.changeStat("money",300);
     }
 }
 
@@ -36,11 +36,11 @@ void StoryBlock::printResult()
 
 //이 아래로 스토리 블록마다 객체 상속받아 계속 생성
 
-void Block1::storyBlockFunction(Player& player)
+void Block1::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("hp", -2);
-        player.changeStat("wealth",150);
+        player.changeStat("money",150);
     }
     else if (playerSelect == 2)
         player.changeStat("penetration", 1);
@@ -50,15 +50,15 @@ void Block1::storyBlockFunction(Player& player)
     }
 }
 
-void Block2::storyBlockFunction(Player& player)
+void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("hp", -3);
-        player.changeStat("wealth", 150);
+        player.changeStat("money", 150);
         player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("wealth", -100);
+        player.changeStat("money", -100);
         player.changeStat("charisma", 1);
     }
     else {
@@ -66,7 +66,7 @@ void Block2::storyBlockFunction(Player& player)
         player.changeStat("penetration",1);
     }
 }
-void Block3::storyBlockFunction(Player& player)
+void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("hp", -2);
@@ -75,19 +75,19 @@ void Block3::storyBlockFunction(Player& player)
     }
     else if (playerSelect == 2)
     {
-        player.changeStat("wealth", -100);
+        player.changeStat("money", -100);
         player.changeStat("information", 1);
     }
     else
         player.changeStat("hp", 1);
 }
 
-void Block4::storyBlockFunction(Player& player)
+void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
-        if(player.penetration >= 6){
-            player.changeStat("wealth",500);
-            if (player.penetration <= 5)
+        if(player.peekStat("penetration") >= 6) {
+            player.changeStat("money",500);
+            if (player.peekStat("penetration") <= 5)
             {
                 player.changeStat("hp", -2);
             }
@@ -130,11 +130,11 @@ void Block7::storyBlockFunction(Player& player,StoryQueue* queue)
 void Block8::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("wealth", 300);
+    player.changeStat("money", 300);
     }
     else if (playerSelect == 2)
     {
-    player.changeStat("wealth", 100);
+    player.changeStat("money", 100);
     }
     else
     player.changeStat("hp", -1);
@@ -165,7 +165,7 @@ void Block10::storyBlockFunction(Player& player)
     }
     else if (playerSelect == 2)
     {
-        player.changeStat("wealth", -100);
+        player.changeStat("money", -100);
     }
     else
         player.changeStat("information", 2);
@@ -178,7 +178,7 @@ void Block11::storyBlockFunction(Player& player)
     }
     else if (playerSelect == 2)
     {
-        player.changeStat("wealth", 300);
+        player.changeStat("money", 300);
     }
     else
         player.changeStat("information", 2);
