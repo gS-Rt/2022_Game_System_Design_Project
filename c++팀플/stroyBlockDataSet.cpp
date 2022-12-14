@@ -14,25 +14,27 @@ using namespace std;
 
 void Block0::storyBlockFunction(Player& player)
 {
-    if(playerSelect==1){
+    if(playerSelect==1) {
         player.changeStat("hp", -2);
-        player.changeStat("wealth",200);}
+        player.changeStat("wealth",200);
+    }
     else if (playerSelect == 2)
-    player.changeStat("penetration", 2);
-    else
-    player.changeStat("hp",-3);
-    player.changeStat("charisma",-2);
-    player.changeStat("wealth",300);
+        player.changeStat("penetration", 2);
+    else {
+        player.changeStat("hp",-3);
+        player.changeStat("charisma",-2);
+        player.changeStat("wealth",300);
+    }
 }
 
-/* °°Àº ¼±ÅÃÁö¶óµµ Á¶°Ç¿¡ µû¶ó ´Ù¸¥ °á°ú¹® Ãâ·Â ÇÊ¿ä ½Ã ÇÔ¼ö ¿À¹ö¶óÀÌµùÀ¸·Î printResult() »ç¿ëÀÚÈ­ ÇÊ¿ä
+/* ê°™ì€ ì„ íƒì§€ë¼ë„ ì¡°ê±´ì— ë”°ë¼ ë‹¤ë¥¸ ê²°ê³¼ë¬¸ ì¶œë ¥ í•„ìš” ì‹œ í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©ìœ¼ë¡œ printResult() ì‚¬ìš©ìží™” í•„ìš”
 void StoryBlock::printResult()
 {
 
 }
 */
 
-//ÀÌ ¾Æ·¡·Î ½ºÅä¸® ºí·Ï¸¶´Ù °´Ã¼ »ó¼Ó¹Þ¾Æ °è¼Ó »ý¼º
+//ì´ ì•„ëž˜ë¡œ ìŠ¤í† ë¦¬ ë¸”ë¡ë§ˆë‹¤ ê°ì²´ ìƒì†ë°›ì•„ ê³„ì† ìƒì„±
 
 void Block1::storyBlockFunction(Player& player)
 {
@@ -41,10 +43,11 @@ void Block1::storyBlockFunction(Player& player)
         player.changeStat("wealth",150);
     }
     else if (playerSelect == 2)
-    player.changeStat("penetration", 1);
-    else
-    player.changeStat("charisma", 2);
-    player.changeStat("penetration", -1);
+        player.changeStat("penetration", 1);
+    else {
+        player.changeStat("charisma", 2);
+        player.changeStat("penetration", -1);
+    }
 }
 
 void Block2::storyBlockFunction(Player& player)
@@ -54,28 +57,29 @@ void Block2::storyBlockFunction(Player& player)
         player.changeStat("wealth", 150);
         player.changeStat("information", 1);
     }
-    else if (playerSelect == 2){
-    player.changeStat("wealth", -100);
-    player.changeStat("charisma", 1);
+    else if (playerSelect == 2) {
+        player.changeStat("wealth", -100);
+        player.changeStat("charisma", 1);
     }
-    else
-    player.changeStat("hp",-1);
-    player.changeStat("penetration",1);
+    else {
+        player.changeStat("hp",-1);
+        player.changeStat("penetration",1);
+    }
 }
 void Block3::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("hp", -2);
-    player.changeStat("power", 1);
-    player.changeStat("charisma", -3);
+        player.changeStat("hp", -2);
+        player.changeStat("power", 1);
+        player.changeStat("charisma", -3);
     }
     else if (playerSelect == 2)
     {
-    player.changeStat("wealth", -100);
-    player.changeStat("information", 1);
+        player.changeStat("wealth", -100);
+        player.changeStat("information", 1);
     }
     else
-    player.changeStat("hp", 1);
+        player.changeStat("hp", 1);
 }
 
 void Block4::storyBlockFunction(Player& player)
@@ -83,16 +87,16 @@ void Block4::storyBlockFunction(Player& player)
     if(playerSelect==1){
         if(player.penetration >= 6){
             player.changeStat("wealth",500);
-        if (player.penetration <= 5)
-        {
-            player.changeStat("hp", -2);
-        }
+            if (player.penetration <= 5)
+            {
+                player.changeStat("hp", -2);
+            }
         }
     }
     else if (playerSelect == 2)
-    player.changeStat("information", 1);
+        player.changeStat("information", 1);
     else
-    player.changeStat("hp", -3);
+        player.changeStat("hp", -3);
 }
 void Block5::storyBlockFunction(Player& player,StoryQueue* queue)
 {
@@ -141,40 +145,41 @@ void Block8::storyBlockFunction(Player& player)
 void Block9::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("penetration", 1);
+        player.changeStat("penetration", 1);
     }
     else if (playerSelect == 2)
     {
-    player.changeStat("hp", 3);
-    player.changeStat("power", 2); 
+        player.changeStat("hp", 3);
+        player.changeStat("power", 2); 
     }
-    else
-    player.changeStat("charisma", 2);
-    player.changeStat("penetration", 2);
+    else {
+        player.changeStat("charisma", 2);
+        player.changeStat("penetration", 2);
+    }
 }
 
 void Block10::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("hp", -4);
+        player.changeStat("hp", -4);
     }
     else if (playerSelect == 2)
     {
-    player.changeStat("wealth", -100);
+        player.changeStat("wealth", -100);
     }
     else
-    player.changeStat("information", 2);
+        player.changeStat("information", 2);
 }
 
 void Block11::storyBlockFunction(Player& player)
 {
     if(playerSelect==1){
-    player.changeStat("charisma", 2);
+        player.changeStat("charisma", 2);
     }
     else if (playerSelect == 2)
     {
-    player.changeStat("wealth", 300);
+        player.changeStat("wealth", 300);
     }
     else
-    player.changeStat("information", 2);
+        player.changeStat("information", 2);
 }
