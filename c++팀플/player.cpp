@@ -15,6 +15,7 @@ Player::Player()
     money = 0;
     charisma = 0;
     penetration = 0;
+    information = 0;
 
 }
 int Player::peekStat(string type) //참조할 스탯 데이터 이름 매개로 넣으면 반환
