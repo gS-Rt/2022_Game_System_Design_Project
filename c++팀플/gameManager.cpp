@@ -14,10 +14,10 @@ using namespace std;
 void GameManager::selectNextBlock()
 {
     StoryBlock* selectBlock = NULL;
-    while (true) //ÀÌÀü ºí·Ï°ú °°Àº ºí·Ï ¼±ÅÃµÇ¸é ´Ù½Ã ÃßÃ·
+    while (true) //ì´ì „ ë¸”ë¡ê³¼ ê°™ì€ ë¸”ë¡ ì„ íƒë˜ë©´ ë‹¤ì‹œ ì¶”ì²¨
     {
         srand((unsigned int)time(NULL));
-        num = rand() % 4;
+        num = rand() % 15;
         if (pri == num)
         {
             continue;
@@ -28,7 +28,7 @@ void GameManager::selectNextBlock()
     }
     pri = num;
 
-    if (num == 0) //num¿¡ ¸Â´Â ºí·° °´Ã¼ »ı¼º
+    if (num == 0) //numì— ë§ëŠ” ë¸”ëŸ­ ê°ì²´ ìƒì„±
         selectBlock = new Block0();
     else if (num == 1)
         selectBlock = new Block1();
@@ -38,6 +38,28 @@ void GameManager::selectNextBlock()
         selectBlock = new Block3();
     else if (num == 4)
         selectBlock = new Block4();
+    else if (num == 5)
+        selectBlock = new Block5();
+    else if (num == 6)
+        selectBlock = new Block6();
+    else if (num == 7)
+        selectBlock = new Block7();
+    else if (num == 8)
+        selectBlock = new Block8();
+    else if (num == 9)
+        selectBlock = new Block9();
+    else if (num == 10)
+        selectBlock = new Block10();
+    else if (num == 11)
+        selectBlock = new Block11();
+    else if (num == 12)
+        selectBlock = new Block12();
+    else if (num == 13)
+        selectBlock = new Block13();
+    else if (num == 14)
+        selectBlock = new Block14();
+    else if (num == 15)
+        selectBlock = new Block15();
   
     queue->inqueue(selectBlock);
     
@@ -52,30 +74,31 @@ void GameManager::runStoryBlock()
     Sleep(1000);
     temp->printResult();
     runCycle++;
-    delete(temp); //Ãâ·Â ³¡³­ ºí·°Àº »èÁ¦
+    delete(temp); //ì¶œë ¥ ëë‚œ ë¸”ëŸ­ì€ ì‚­ì œ
 }
 
-void GameManager::CloseGame() //½ÇÇàÇÏ¸é ¹İº¹¹® Á¾·á
+void GameManager::CloseGame() //ì‹¤í–‰í•˜ë©´ ë°˜ë³µë¬¸ ì¢…ë£Œ
 {
     closeGame = true;
 }
 
 void GameManager::startGame()
 {
-    while (true) //¸ŞÀÎ ·çÇÁ
+    while (true) //ë©”ì¸ ë£¨í”„
     {
 
         selectNextBlock();
         runStoryBlock();
-        cout << "Ã¼·Â: " << player.peekStat("hp")<<" , µ·: "<< player.peekStat("money") << endl;
+        cout << "ì²´ë ¥: " << player.peekStat("hp")<<" , ëˆ: "<< player.peekStat("money") << endl;
 
-        if (runCycle == 5) //5ÅÏ Á¾·á ÈÄ block4 È®Á¤ »ğÀÔ, ÀÌ ·ÎÁ÷À¸·Î ÁøÇà Áß ÇÊ¼ö ºí·Ï »ğÀÔ °¡´É
+        if (runCycle == 10) //5í„´ ì¢…ë£Œ í›„ block4 í™•ì • ì‚½ì…, ì´ ë¡œì§ìœ¼ë¡œ ì§„í–‰ ì¤‘ í•„ìˆ˜ ë¸”ë¡ ì‚½ì… ê°€ëŠ¥
         {
-            cout << "block4 »ğÀÔ" << endl;
+            cout << "block4 ì‚½ì…" << endl;
             queue->inqueue(new Block4());
+            closeGame = true;
         }
 
-        if (closeGame) //true¸é ¹İº¹¹® Á¾·á
+        if (closeGame) //trueë©´ ë°˜ë³µë¬¸ ì¢…ë£Œ
         {
             break;
         }
