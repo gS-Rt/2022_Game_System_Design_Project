@@ -49,12 +49,21 @@ void StoryBlock::scanPlayerInput() //선택 입력
 
 void StoryBlock::printResult() //결과문 출력, 오버라이딩으로 조건에 따라 변경 가능
 {
-    if(playerSelect==1)
-        cout << endl << result1 << endl;
+    if (playerSelect == 1)
+    {
+        if(!result1.empty())
+            cout << endl << result1 << endl;
+    }
     else if (playerSelect == 2)
-        cout << endl << result2 << endl;
+    {
+        if (!result2.empty())
+            cout << endl << result2 << endl;
+    }
     else
-        cout << endl << result3 << endl;
+    {
+        if (!result3.empty())
+            cout << endl << result3 << endl;
+    }
 
     cout << endl;
     Sleep(1000);
