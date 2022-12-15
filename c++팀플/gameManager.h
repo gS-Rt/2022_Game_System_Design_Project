@@ -19,15 +19,17 @@ protected:
     Player player; //플레이어 능력치 관리 클래스
     int num; //선택된 블록 인덱스 숫자
     int runCycle; //진행된 블록 수
-    int pri; //직전에 삽입된 블록 인덱스 숫자
+    int pri[10]; //직전에 삽입된 블록 인덱스 숫자
 
 public:
     GameManager()
     {
         queue = new StoryQueue;
         runCycle = 0;
-        pri = -1;
         num = 0;
+        for (int i = 0; i < 10; i++) {
+            pri[i] = -1;
+        }
     }
 
     void startGame();

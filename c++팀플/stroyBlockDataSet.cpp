@@ -12,14 +12,14 @@
 #include "storyBlolckQueue.h"
 using namespace std;
 
-/* ê°™ì€ ì„ íƒì§€ë¼ë„ ì¡°ê±´ì— ë”°ë¼ ë‹¤ë¥¸ ê²°ê³¼ë¬¸ ì¶œë ¥ í•„ìš” ì‹œ í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©ìœ¼ë¡œ printResult() ì‚¬ìš©ìží™” í•„ìš”
+/* °°Àº ¼±ÅÃÁö¶óµµ Á¶°Ç¿¡ µû¶ó ´Ù¸¥ °á°ú¹® Ãâ·Â ÇÊ¿ä ½Ã ÇÔ¼ö ¿À¹ö¶óÀÌµùÀ¸·Î printResult() »ç¿ëÀÚÈ­ ÇÊ¿ä
 void StoryBlock::printResult()
 {
 
 }
 */
 
-//ì´ ì•„ëž˜ë¡œ ìŠ¤í† ë¦¬ ë¸”ë¡ë§ˆë‹¤ ê°ì²´ ìƒì†ë°›ì•„ ê³„ì† ìƒì„±
+//ÀÌ ¾Æ·¡·Î ½ºÅä¸® ºí·Ï¸¶´Ù °´Ã¼ »ó¼Ó¹Þ¾Æ °è¼Ó »ý¼º
 
 void Block0::storyBlockFunction(Player& player, StoryQueue* queue)
 {
@@ -58,10 +58,12 @@ void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
-        if(player.peekStat("money") >= 200)
+        if (player.peekStat("money") >= 200) {
+            cout << "µ·À» »©¾Ò°å´Ù!";
             player.changeStat("money", -200);
+        }
         else {
-            cout << "ëˆì´ ë¶€ì¡±í•´ ê³µê²©ë°›ì•˜ë‹¤!";
+            cout << "µ·ÀÌ ºÎÁ·ÇØ °ø°Ý¹Þ¾Ò´Ù!";
             player.changeStat("hp", -1);
         }
     }
@@ -81,11 +83,11 @@ void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
     else if (playerSelect == 2) {
         if(player.peekStat("money") >= 100) {
             player.changeStat("money", -100);
-            cout << "ê·¸ì˜ ì—¬ì •ì„ ë„ìš°ë ¤ ê³¨ë“œë¥¼ ì¤¬ë‹¤. ê·¸ëŠ” ê°ì‚¬ë¥¼ í‘œí•˜ë©° ìžì‹ ì´ ìžˆë˜ êµ°ëŒ€ì™€ ì „ì´ˆê¸°ì§€ì— ëŒ€í•´ ì•Œë ¤ì£¼ë©°, ì¡°ì‹¬í•˜ë¼ ì¡°ì–¸í•´ì£¼ì—ˆë‹¤.";
+            cout << "±×ÀÇ ¿©Á¤À» µµ¿ì·Á °ñµå¸¦ Áá´Ù. ±×´Â °¨»ç¸¦ Ç¥ÇÏ¸ç ÀÚ½ÅÀÌ ÀÖ´ø ±º´ë¿Í ÀüÃÊ±âÁö¿¡ ´ëÇØ ¾Ë·ÁÁÖ¸ç, Á¶½ÉÇÏ¶ó Á¶¾ðÇØÁÖ¾ú´Ù.";
             player.changeStat("information", 1);
         }
         else {
-            cout << "ê±´ë„¤ì¤„ ëˆì´ ë¶€ì¡±í•˜ë‹¤...";
+            cout << "°Ç³×ÁÙ µ·ÀÌ ºÎÁ·ÇÏ´Ù...";
         }
     }
     else {
@@ -107,22 +109,25 @@ void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
 
 void Block5::storyBlockFunction(Player& player, StoryQueue* queue)
 {
-    if(playerSelect == 2) {
-        queue.inqueue(new Block8());
+    if (playerSelect == 2) {
+        queue->inqueue(new Block8());
+    }
     return;
 }
 
 void Block6::storyBlockFunction(Player& player, StoryQueue* queue)
 {
-    if(playerSelect == 3) {
-        queue.inqueue(new Block8());
+    if (playerSelect == 3) {
+        queue->inqueue(new Block8());
+    }
     return;
 }
 
 void Block7::storyBlockFunction(Player& player, StoryQueue* queue)
 {
-    if(playerSelect == 2) {
-        queue.inqueue(new Block8());
+    if (playerSelect == 2) {
+        queue->inqueue(new Block8());
+    }
     return;
 }
 
@@ -186,30 +191,32 @@ void Block12::storyBlockFunction(Player& player, StoryQueue* queue)
     int ran = rand() % 2;
     if(playerSelect==1) {
         if(player.peekStat("money") >= 100) {
+            player.changeStat("money", -100);
             if(ran == 0) {
-                cout << "ë§Žì€ ì§€ì‹ì´ ì í˜€ìžˆëŠ” ë°±ê³¼ì‚¬ì „ì´ë‹¤. ì§€ì‹ì´ ëŠ˜ì–´ë‚¬ë‹¤.";
+                cout << "¸¹Àº Áö½ÄÀÌ ÀûÇôÀÖ´Â ¹é°ú»çÀüÀÌ´Ù. Áö½ÄÀÌ ´Ã¾î³µ´Ù.";
                 player.changeStat("information", 1);
             }
             else {
-                cout << "ìž¬ë°ŒëŠ” ë§Œí™”ì±…ì´ë‹¤. ê¸°ë¶„ì´ ì¢‹ì•„ì¡Œë‹¤.";
+                cout << "Àç¹Õ´Â ¸¸È­Ã¥ÀÌ´Ù. ±âºÐÀÌ ÁÁ¾ÆÁ³´Ù.";
             }
         }
         else {
-            cout << "ëˆì´ ë¶€ì¡±í•˜ë‹¤...";
+            cout << "µ·ÀÌ ºÎÁ·ÇÏ´Ù...";
         }
     }
     else if (playerSelect == 2) {
+        player.changeStat("money", -100);
         if(player.peekStat("money") >= 100) {
             if(ran == 0) {
-                 cout << "ì—„ì²­ë‚œ íž˜ì´ ëŠê»´ì§„ë‹¤. ì‹ ì²´ ëŠ¥ë ¥ì´ í–¥ìƒëœ ê²ƒ ê°™ë‹¤..";
+                 cout << "¾öÃ»³­ ÈûÀÌ ´À²¸Áø´Ù. ½ÅÃ¼ ´É·ÂÀÌ Çâ»óµÈ °Í °°´Ù..";
                  player.changeStat("power", 1);
             }
             else {
-                 cout << "ë§›ìžˆëŠ” ì£¼ìŠ¤ì¸ ê²ƒ ê°™ë‹¤. íŠ¹ë³„í•œ íš¨ê³¼ëŠ” ì—†ëŠ” ê²ƒ ê°™ë‹¤.";
+                 cout << "¸ÀÀÖ´Â ÁÖ½ºÀÎ °Í °°´Ù. Æ¯º°ÇÑ È¿°ú´Â ¾ø´Â °Í °°´Ù.";
             }
         }
         else {
-            cout << "ëˆì´ ë¶€ì¡±í•˜ë‹¤...";
+            cout << "µ·ÀÌ ºÎÁ·ÇÏ´Ù...";
         }
     }
 }
@@ -236,11 +243,11 @@ void Block14::storyBlockFunction(Player& player, StoryQueue* queue)
     int ran = rand() % 2;
     if(playerSelect==1) {
         if(ran == 0) {
-            cout << "ë¯¸ë¯¹ì´ ê¸°ìŠµí–ˆë‹¤! í”¼í•´ë¥¼ ìž…ì—ˆë‹¤.";
+            cout << "¹Ì¹ÍÀÌ ±â½ÀÇß´Ù! ÇÇÇØ¸¦ ÀÔ¾ú´Ù.";
             player.changeStat("hp", -1);
         }
         else {
-            cout << "ê³¨ë“œê°€ ë“¤ì–´ìžˆì—ˆë‹¤! ë‘ë‘‘í•˜ê²Œ ì±™ê²¼ë‹¤.";
+            cout << "°ñµå°¡ µé¾îÀÖ¾ú´Ù! µÎµÏÇÏ°Ô Ã¬°å´Ù.";
             player.changeStat("money", 300);
         }
     }
@@ -256,7 +263,7 @@ void Block15::storyBlockFunction(Player& player, StoryQueue* queue)
             player.changeStat("invade", 1);
         }
         else {
-            cout << "ì—°ëª»ì— ë˜ì§ˆ ëˆì´ ì—†ë‹¤...";
+            cout << "¿¬¸ø¿¡ ´øÁú µ·ÀÌ ¾ø´Ù...";
         }
     }
     else if (playerSelect == 2) {
@@ -266,7 +273,7 @@ void Block15::storyBlockFunction(Player& player, StoryQueue* queue)
             player.changeStat("honor", 1);
         }
         else {
-            cout << "ì—°ëª»ì— ë˜ì§ˆ ëˆì´ ì—†ë‹¤...";
+            cout << "¿¬¸ø¿¡ ´øÁú µ·ÀÌ ¾ø´Ù...";
         }
     }
     else {

@@ -14,21 +14,31 @@ using namespace std;
 void GameManager::selectNextBlock()
 {
     StoryBlock* selectBlock = NULL;
-    while (true) //ì´ì „ ë¸”ë¡ê³¼ ê°™ì€ ë¸”ë¡ ì„ íƒë˜ë©´ ë‹¤ì‹œ ì¶”ì²¨
+    while (true) //ÀÌÀü ºí·Ï°ú °°Àº ºí·Ï ¼±ÅÃµÇ¸é ´Ù½Ã ÃßÃ·
     {
+        bool isSame = false;
+
         srand((unsigned int)time(NULL));
         num = rand() % 15;
-        if (pri == num)
-        {
+
+        if (num == 8)
+            continue;
+
+        for (int i = 0; i < runCycle + 1; i++) {
+            if (pri[i] == num) {
+                isSame = true;
+                break;
+            }
+        }
+
+        if (isSame) {
             continue;
         }
-        else
-            break;
+
         break;
     }
-    pri = num;
 
-    if (num == 0) //numì— ë§ëŠ” ë¸”ëŸ­ ê°ì²´ ìƒì„±
+    if (num == 0) //num¿¡ ¸Â´Â ºí·° °´Ã¼ »ı¼º
         selectBlock = new Block0();
     else if (num == 1)
         selectBlock = new Block1();
@@ -74,31 +84,31 @@ void GameManager::runStoryBlock()
     Sleep(1000);
     temp->printResult();
     runCycle++;
-    delete(temp); //ì¶œë ¥ ëë‚œ ë¸”ëŸ­ì€ ì‚­ì œ
+    delete(temp); //Ãâ·Â ³¡³­ ºí·°Àº »èÁ¦
 }
 
-void GameManager::CloseGame() //ì‹¤í–‰í•˜ë©´ ë°˜ë³µë¬¸ ì¢…ë£Œ
+void GameManager::CloseGame() //½ÇÇàÇÏ¸é ¹İº¹¹® Á¾·á
 {
     closeGame = true;
 }
 
 void GameManager::startGame()
 {
-    while (true) //ë©”ì¸ ë£¨í”„
+    while (true) //¸ŞÀÎ ·çÇÁ
     {
 
         selectNextBlock();
         runStoryBlock();
-        cout << "ì²´ë ¥: " << player.peekStat("hp")<<" , ëˆ: "<< player.peekStat("money") << endl;
+        cout << "Ã¼·Â: " << player.peekStat("hp")<<" , µ·: "<< player.peekStat("money") << endl;
 
-        if (runCycle == 10) //5í„´ ì¢…ë£Œ í›„ block4 í™•ì • ì‚½ì…, ì´ ë¡œì§ìœ¼ë¡œ ì§„í–‰ ì¤‘ í•„ìˆ˜ ë¸”ë¡ ì‚½ì… ê°€ëŠ¥
+        if (runCycle == 10) //5ÅÏ Á¾·á ÈÄ block4 È®Á¤ »ğÀÔ, ÀÌ ·ÎÁ÷À¸·Î ÁøÇà Áß ÇÊ¼ö ºí·Ï »ğÀÔ °¡´É
         {
-            cout << "block4 ì‚½ì…" << endl;
+            cout << "block4 »ğÀÔ" << endl;
             queue->inqueue(new Block4());
             closeGame = true;
         }
 
-        if (closeGame) //trueë©´ ë°˜ë³µë¬¸ ì¢…ë£Œ
+        if (closeGame) //true¸é ¹İº¹¹® Á¾·á
         {
             break;
         }
