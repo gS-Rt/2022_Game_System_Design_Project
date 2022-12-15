@@ -5,7 +5,6 @@
 #include <string>
 #include <stdlib.h>
 #include <cstdlib>
-//#include<ctime>
 #include <time.h>
 #include<sstream>
 #include "storyBlock.h"

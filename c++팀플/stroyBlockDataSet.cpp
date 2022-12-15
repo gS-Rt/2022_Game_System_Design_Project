@@ -97,6 +97,14 @@ void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
 void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
+        if (player.peekStat("invade") >= 1) {
+            cout << "무사히 잠입에 성공해 훔치는데 성공했다.꽤 많은 돈을 얻을 수 있을 것 같다.";
+            player.changeStat("money", 500);
+        }
+        else {
+            cout << "도적들에게 걸려 흠씬 두들겨 맞았다...";
+            player.changeStat("hp", -1);
+        }
     }
     else if (playerSelect == 2) {
         player.changeStat("information", 1);
@@ -300,19 +308,95 @@ void BlockChoiceStat::storyBlockFunction(Player& player, StoryQueue* queue)
 void BlockMainStory::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
+        queue->inqueue(new BlockMainStoryCastle());
     }
     else if (playerSelect == 2) {
+        queue->inqueue(new BlockMainStoryMarket());
     }
 }
 
 void BlockMainStoryCastle::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
+        queue->inqueue(new BlockMainStoryCastleDoor());
     }
     else if (playerSelect == 2) {
+        queue->inqueue(new BlockMainStoryCastleHole());
     }
 }
 
 void BlockStoryStart::storyBlockFunction(Player& player, StoryQueue* queue) {
 
 }
+
+void BlockMainStoryCastleDoor::storyBlockFunction(Player& player, StoryQueue* queue) {
+    if (player.peekStat("honor") >= 3)
+        cout << "높은 명성덕에 경비병의 안내를 따라 성안으로 이동했다.";
+    else {
+        if (player.peekStat("power") >= 3) {
+            cout << "경비병을 가뿐하게 물리치고 성에 들어갔다.";
+        }
+        else {
+            cout << "경비병을 뚫고 성에 들어갔다. 꽤 심한 부상을 입었다.";
+            player.changeStat("hp", -2);
+        }
+    }
+    
+    queue->inqueue(new BlockMainStoryFinal());
+}
+
+void BlockMainStoryCastleHole::storyBlockFunction(Player& player, StoryQueue* queue) {
+    if (player.peekStat("invade") >= 3) {
+        cout << "조심스레 성안에 잠입했다. 다행히 들키지 않았다.";
+    }
+    else {
+        cout << "경비병에게 걸려 부상을 입었지만, 들어오는데엔 성공했다.";
+        player.changeStat("hp", -1);
+    }
+
+    queue->inqueue(new BlockMainStoryFinal());
+}
+
+void BlockMainStoryMarket::storyBlockFunction(Player& player, StoryQueue* queue) {
+    cout << "당신의 모든 돈을 털어 정보를 구매했다.";
+    bool isReal = false;
+    int money = player.peekStat("money");
+    srand((unsigned int)time(NULL));
+    int ran = rand() % 10;
+    player.changeStat("money", -money);
+    for (int i = 0; i < (money / 500) + 1; i++) {
+        if (ran == 0 || ran == 1) {
+            isReal = true;
+        }
+    }
+
+    if (isReal) {
+        queue->inqueue(new BlockEndingVictory());
+    }
+    else {
+        queue->inqueue(new BlockEndingDefeat());
+
+    }
+}
+
+void BlockMainStoryFinal::storyBlockFunction(Player& player, StoryQueue* queue) {
+    if (player.peekStat("information") >= 3) {
+        queue->inqueue(new BlockEndingVictory());
+    }
+    else {
+        queue->inqueue(new BlockEndingDefeat());
+    }
+}
+
+void BlockEndingVictory::storyBlockFunction(Player& player, StoryQueue* queue) {
+    player.GameOver();
+}
+
+void BlockEndingDefeat::storyBlockFunction(Player& player, StoryQueue* queue) {
+    player.GameOver();
+}
+
+void BlockEndingDie::storyBlockFunction(Player& player, StoryQueue* queue) {
+    player.GameOver();
+}
+

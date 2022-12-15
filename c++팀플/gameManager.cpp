@@ -6,9 +6,9 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
-#include "storyBlock.h"
 #include "gameManager.h"
 #include "stroyBlockDataSet.h"
+#include "storyBlolckQueue.h"
 #include "player.h"
 using namespace std;
 
@@ -29,13 +29,16 @@ void GameManager::selectNextBlock()
             continue;
 
         for (int i = 0; i < runCycle + 1; i++) {
-            if (pri[i] == num) {
+            if (num != 8 && pri[i] == num) {
                 isSame = true;
                 break;
             }
         }
 
-        break;
+        if (!isSame) {
+            pri[runCycle] = num;
+            break;
+        }
     }
 
     if (num == 0) //num에 맞는 블럭 객체 생성
@@ -87,11 +90,6 @@ void GameManager::runStoryBlock()
     delete(temp); //출력 끝난 블럭은 삭제
 }
 
-void GameManager::CloseGame() //실행하면 반복문 종료
-{
-    closeGame = true;
-}
-
 void GameManager::startGame()
 {
     queue->inqueue(new BlockChoiceStat());
@@ -99,21 +97,24 @@ void GameManager::startGame()
 
     while (true) //메인 루프
     {
-
-        selectNextBlock();
-        runStoryBlock();
-        cout << "체력: " << player.peekStat("hp")<<" , 돈: "<< player.peekStat("money") << endl;
-
-        if (runCycle == 10) //5턴 종료 후 block4 확정 삽입, 이 로직으로 진행 중 필수 블록 삽입 가능
-        {
-            cout << "block4 삽입" << endl;
-            queue->inqueue(new Block4());
-            closeGame = true;
+        if (player.peekStat("hp") <= 0) {
+            queue->inqueue(new BlockEndingDie());
+            player.changeStat("hp", player.peekStat("hp"));
         }
 
-        if (closeGame) //true면 반복문 종료
+        if (player.getGameOver()) //true면 반복문 종료
         {
             break;
         }
+
+        if (runCycle == 13)
+        {
+            queue->inqueue(new BlockMainStory());
+        }
+
+        system("cls");
+        cout << "체력: " << player.peekStat("hp") << " , 돈: " << player.peekStat("money") << endl;
+        selectNextBlock();
+        runStoryBlock();
     }
 }

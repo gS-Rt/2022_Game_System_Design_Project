@@ -17,7 +17,7 @@ Player::Player()
     invade = 0;
     information = 0;
 }
-int Player::peekStat(string type) //ì°¸ì¡°í•  ìŠ¤íƒ¯ ë°ì´í„° ì´ë¦„ ë§¤ê°œë¡œ ë„£ìœ¼ë©´ ë°˜í™˜
+int Player::peekStat(string type) //ÂüÁ¶ÇÒ ½ºÅÈ µ¥ÀÌÅÍ ÀÌ¸§ ¸Å°³·Î ³ÖÀ¸¸é ¹İÈ¯
 {
     if (type == "hp")
         return hp;
@@ -34,7 +34,7 @@ int Player::peekStat(string type) //ì°¸ì¡°í•  ìŠ¤íƒ¯ ë°ì´í„° ì´ë¦„ ë§¤ê°œë¡œ 
     else
         return -1;
 }
-void Player::changeStat(string type, int data) //ë°”ê¿€ ìŠ¤íƒ¯ íƒ€ì…ê³¼ ë³€ê²½í•  ê°’ ì…ë ¥(ì¤„ì¼ë ¤ë©´ ìŒìˆ˜ê°’ ì…ë ¥)
+void Player::changeStat(string type, int data) //¹Ù²Ü ½ºÅÈ Å¸ÀÔ°ú º¯°æÇÒ °ª ÀÔ·Â(ÁÙÀÏ·Á¸é À½¼ö°ª ÀÔ·Â)
 {
     if (type == "hp")
         hp += data;
@@ -49,5 +49,5 @@ void Player::changeStat(string type, int data) //ë°”ê¿€ ìŠ¤íƒ¯ íƒ€ì…ê³¼ ë³€ê²½í
     else if (type == "information")
         information += data;
     else
-        cout << "íƒ€ì… ì…ë ¥ ì˜¤ë¥˜";
+        cout << "Å¸ÀÔ ÀÔ·Â ¿À·ù";
 }
