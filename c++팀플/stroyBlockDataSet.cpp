@@ -58,7 +58,12 @@ void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("money", -200);
+        if(player.peekStat("money") >= 200)
+            player.changeStat("money", -200);
+        else {
+            cout << "돈이 부족해 공격받았다!";
+            player.changeStat("hp", -1);
+        }
     }
     else {
         player.changeStat("hp",-1);
@@ -74,8 +79,14 @@ void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("invade", -1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("money", -100);
-        player.changeStat("information", 1);
+        if(player.peekStat("money") >= 100) {
+            player.changeStat("money", -100);
+            cout << "그의 여정을 도우려 골드를 줬다. 그는 감사를 표하며 자신이 있던 군대와 전초기지에 대해 알려주며, 조심하라 조언해주었다.";
+            player.changeStat("information", 1);
+        }
+        else {
+            cout << "건네줄 돈이 부족하다...";
+        }
     }
     else {
     }
@@ -174,24 +185,32 @@ void Block12::storyBlockFunction(Player& player, StoryQueue* queue)
     srand((unsigned int)time(NULL));
     int ran = rand() % 2;
     if(playerSelect==1) {
-        if(ran == 0) {
-            cout << "많은 지식이 적혀있는 백과사전이다. 지식이 늘어났다.";
-            player.changeStat("information", 1);
+        if(player.peekStat("money") >= 100) {
+            if(ran == 0) {
+                cout << "많은 지식이 적혀있는 백과사전이다. 지식이 늘어났다.";
+                player.changeStat("information", 1);
+            }
+            else {
+                cout << "재밌는 만화책이다. 기분이 좋아졌다.";
+            }
         }
         else {
-            cout << "재밌는 만화책이다. 기분이 좋아졌다.";
+            cout << "돈이 부족하다...";
         }
     }
     else if (playerSelect == 2) {
-        if(ran == 0) {
-             cout << "엄청난 힘이 느껴진다. 신체 능력이 향상된 것 같다..";
-             player.changeStat("power", 1);
+        if(player.peekStat("money") >= 100) {
+            if(ran == 0) {
+                 cout << "엄청난 힘이 느껴진다. 신체 능력이 향상된 것 같다..";
+                 player.changeStat("power", 1);
+            }
+            else {
+                 cout << "맛있는 주스인 것 같다. 특별한 효과는 없는 것 같다.";
+            }
         }
         else {
-             cout << "맛있는 주스인 것 같다. 특별한 효과는 없는 것 같다.";
+            cout << "돈이 부족하다...";
         }
-    }
-    else {
     }
 }
 
@@ -230,15 +249,25 @@ void Block14::storyBlockFunction(Player& player, StoryQueue* queue)
 void Block15::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("money", -100);
-        player.changeStat("hp", 2);
-        player.changeStat("power", 1);
-        player.changeStat("invade", 1);
+        if(player.peekStat("money") >= 100) {
+            player.changeStat("money", -100);
+            player.changeStat("hp", 2);
+            player.changeStat("power", 1);
+            player.changeStat("invade", 1);
+        }
+        else {
+            cout << "연못에 던질 돈이 없다...";
+        }
     }
     else if (playerSelect == 2) {
-        player.changeStat("money", -100);
-        player.changeStat("information", 1);
-        player.changeStat("honor", 1);
+        if(player.peekStat("money") >= 100) {
+            player.changeStat("money", -100);
+            player.changeStat("information", 1);
+            player.changeStat("honor", 1);
+        }
+        else {
+            cout << "연못에 던질 돈이 없다...";
+        }
     }
     else {
         player.changeStat("money", 300);
