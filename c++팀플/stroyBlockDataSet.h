@@ -170,7 +170,7 @@ public:
         result3 = "나그네는 신비한 포션을 주고 떠났다. 포션을 마시니 몸의 움직임과 어휘력이 올라간 느낌이 든다."; //카리스마+2,잠입능력+2
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block9 :public StoryBlock
 {
@@ -188,7 +188,7 @@ public:
         result3 = "그들에게 따라잡히지 않도록 공격한 뒤 달아났다. 공격과정에서 약간의 부상을 입었다."; //hp-1, 침투력 1+
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block10 :public StoryBlock
 {
@@ -206,7 +206,7 @@ public:
         result3 = "낮선 사람은 그 버섯이 매우 강한 독을 가지고 있는 버섯이란걸 알려주었고, 근처에 성질이 나쁜 군인들의 거점이 있으니 피해가라고 알려주었다."; //정보력 1+
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
 class Block11 :public StoryBlock
 {
@@ -224,5 +224,5 @@ public:
         result3 = "침투할려는 도시의 내부 지도를 찾았다."; //정보력 2+ 
 
     }
-    virtual void storyBlockFunction(Player& player); //플레이어 객체 참조로 값 변경 가능
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };

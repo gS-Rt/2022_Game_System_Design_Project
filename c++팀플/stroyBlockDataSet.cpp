@@ -127,7 +127,7 @@ void Block7::storyBlockFunction(Player& player,StoryQueue* queue)
     else{}
 }
 
-void Block8::storyBlockFunction(Player& player)
+void Block8::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
     player.changeStat("money", 300);
@@ -142,7 +142,7 @@ void Block8::storyBlockFunction(Player& player)
 }
 
 
-void Block9::storyBlockFunction(Player& player)
+void Block9::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("penetration", 1);
@@ -158,7 +158,7 @@ void Block9::storyBlockFunction(Player& player)
     }
 }
 
-void Block10::storyBlockFunction(Player& player)
+void Block10::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("hp", -4);
@@ -171,7 +171,7 @@ void Block10::storyBlockFunction(Player& player)
         player.changeStat("information", 2);
 }
 
-void Block11::storyBlockFunction(Player& player)
+void Block11::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
         player.changeStat("charisma", 2);
