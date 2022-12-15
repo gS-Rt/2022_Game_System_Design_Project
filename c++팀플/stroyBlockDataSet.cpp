@@ -53,7 +53,7 @@ void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
         player.changeStat("hp", -1);
-        player.changeStat("money", 1);
+        player.changeStat("money", 100);
         player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
