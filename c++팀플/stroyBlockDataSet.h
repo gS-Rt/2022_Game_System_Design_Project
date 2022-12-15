@@ -343,7 +343,7 @@ public:
 class BlockMainStory :public StoryBlock
 {
 public:
-    BlockChoiceStat()
+    BlockMainStory()
     {
         script = "드디어 적국에 도착했다. 어디로 가야 전쟁에 대한 정보를 얻을 수 있을까?"; //스크립트 초기화
 
@@ -366,7 +366,7 @@ public:
         select1 = "정문으로 가자.";
         select2 = "개구멍을 찾아보자."; 
 
-        result1 = ""; //카리스마 +
+        result1 = "";
         result2 = ""
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
