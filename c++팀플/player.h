@@ -13,8 +13,8 @@ private:
     int hp; //체력
     int power; //힘
     int money; //부유함, 돈
-    int charisma; //카리스마, 교섭력, 언변 능력
-    int penetration; //잠입, 침투, 위장 능력
+    int honor; //카리스마, 교섭력, 언변 능력
+    int invade; //잠입, 침투, 위장 능력
     int information; //엔딩 분기를 위한 정보량
 public:
     Player();

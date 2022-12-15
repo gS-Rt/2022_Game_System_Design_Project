@@ -19,10 +19,10 @@ void Block0::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("money",200);
     }
     else if (playerSelect == 2)
-        player.changeStat("penetration", 2);
+        player.changeStat("invade", 2);
     else {
         player.changeStat("hp",-3);
-        player.changeStat("charisma",-2);
+        player.changeStat("honor",-2);
         player.changeStat("money",300);
     }
 }
@@ -43,10 +43,10 @@ void Block1::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("money",150);
     }
     else if (playerSelect == 2)
-        player.changeStat("penetration", 1);
+        player.changeStat("invade", 1);
     else {
-        player.changeStat("charisma", 2);
-        player.changeStat("penetration", -1);
+        player.changeStat("honor", 2);
+        player.changeStat("invade", -1);
     }
 }
 
@@ -59,11 +59,11 @@ void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
     }
     else if (playerSelect == 2) {
         player.changeStat("money", -100);
-        player.changeStat("charisma", 1);
+        player.changeStat("honor", 1);
     }
     else {
         player.changeStat("hp",-1);
-        player.changeStat("penetration",1);
+        player.changeStat("invade",1);
     }
 }
 void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
@@ -71,7 +71,7 @@ void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
     if(playerSelect==1){
         player.changeStat("hp", -2);
         player.changeStat("power", 1);
-        player.changeStat("charisma", -3);
+        player.changeStat("honor", -3);
     }
     else if (playerSelect == 2)
     {
@@ -85,9 +85,9 @@ void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
 void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
-        if(player.peekStat("penetration") >= 6) {
+        if(player.peekStat("invade") >= 6) {
             player.changeStat("money",500);
-            if (player.peekStat("penetration") <= 5)
+            if (player.peekStat("invade") <= 5)
             {
                 player.changeStat("hp", -2);
             }
@@ -138,14 +138,14 @@ void Block8::storyBlockFunction(Player& player, StoryQueue* queue)
     }
     else
     player.changeStat("hp", -1);
-    player.changeStat("penetration", 1);
+    player.changeStat("invade", 1);
 }
 
 
 void Block9::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
-        player.changeStat("penetration", 1);
+        player.changeStat("invade", 1);
     }
     else if (playerSelect == 2)
     {
@@ -153,8 +153,8 @@ void Block9::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("power", 2); 
     }
     else {
-        player.changeStat("charisma", 2);
-        player.changeStat("penetration", 2);
+        player.changeStat("honor", 2);
+        player.changeStat("invade", 2);
     }
 }
 
@@ -174,7 +174,7 @@ void Block10::storyBlockFunction(Player& player, StoryQueue* queue)
 void Block11::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1){
-        player.changeStat("charisma", 2);
+        player.changeStat("honor", 2);
     }
     else if (playerSelect == 2)
     {
