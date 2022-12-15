@@ -17,7 +17,7 @@ Player::Player()
     invade = 0;
     information = 0;
 }
-int Player::peekStat(string type) //ÂüÁ¶ÇÒ ½ºÅÈ µ¥ÀÌÅÍ ÀÌ¸§ ¸Å°³·Î ³ÖÀ¸¸é ¹İÈ¯
+int Player::peekStat(string type) //ì°¸ì¡°í•  ìŠ¤íƒ¯ ë°ì´í„° ì´ë¦„ ë§¤ê°œë¡œ ë„£ìœ¼ë©´ ë°˜í™˜
 {
     if (type == "hp")
         return hp;
@@ -29,10 +29,12 @@ int Player::peekStat(string type) //ÂüÁ¶ÇÒ ½ºÅÈ µ¥ÀÌÅÍ ÀÌ¸§ ¸Å°³·Î ³ÖÀ¸¸é ¹İÈ¯
         return honor;
     else if (type == "invade")
         return invade;
+    else if (type == "information")
+        return information;
     else
         return -1;
 }
-void Player::changeStat(string type, int data) //¹Ù²Ü ½ºÅÈ Å¸ÀÔ°ú º¯°æÇÒ °ª ÀÔ·Â(ÁÙÀÏ·Á¸é À½¼ö°ª ÀÔ·Â)
+void Player::changeStat(string type, int data) //ë°”ê¿€ ìŠ¤íƒ¯ íƒ€ì…ê³¼ ë³€ê²½í•  ê°’ ì…ë ¥(ì¤„ì¼ë ¤ë©´ ìŒìˆ˜ê°’ ì…ë ¥)
 {
     if (type == "hp")
         hp += data;
@@ -44,6 +46,8 @@ void Player::changeStat(string type, int data) //¹Ù²Ü ½ºÅÈ Å¸ÀÔ°ú º¯°æÇÒ °ª ÀÔ·Â
         honor += data;
     else if (type == "invade")
         invade += data;
+    else if (type == "information")
+        information += data;
     else
-        cout << "Å¸ÀÔ ÀÔ·Â ¿À·ù";
+        cout << "íƒ€ì… ì…ë ¥ ì˜¤ë¥˜";
 }
