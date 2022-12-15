@@ -117,7 +117,6 @@ public:
         select3 = "30일";
 
         result1 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
-        result2 = "Block8로";
         result3 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
 
     }
@@ -137,8 +136,6 @@ public:
 
         result1 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
         result2 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
-        result3 = "Block8로";
-
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -155,7 +152,6 @@ public:
         select3 = "4개";
 
         result1 = "틀렸네! 지혜를 조금 더 쌓으셔야겠군. 이라고 말하며 나그네는 사라졌다.";
-        result2 = "Block8로";
         result3 = "틀렸네! 지혜를 조금 더 쌓으셔야겠군. 이라고 말하며 나그네는 사라졌다.";
 
     }
@@ -248,8 +244,6 @@ public:
         select2 = "효능을 알 수 없는 포션을 산다."; 
         select3 = "딱히 살 물건이 없어보이니 그냥 간다."; //none
 
-        result1 = "";
-        result2 = "";
         result3 = "살 물건이 없고 시간도 없으니 발걸음을 재촉했다.";
 
     }
@@ -285,7 +279,6 @@ public:
         select1 = "열어본다.";
         select2 = "무시한다."; //none
 
-        result1 = "";
         result2 = "위험을 감수하고 괜히 열어볼 필요는 없을 거 같다."
 
     }
@@ -349,9 +342,6 @@ public:
 
         select1 = "성으로 가본다.";
         select2 = "암시장으로 가본다."; 
-
-        result1 = ""; //카리스마 +
-        result2 = ""
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -365,9 +355,6 @@ public:
 
         select1 = "정문으로 가자.";
         select2 = "개구멍을 찾아보자."; 
-
-        result1 = "";
-        result2 = ""
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
