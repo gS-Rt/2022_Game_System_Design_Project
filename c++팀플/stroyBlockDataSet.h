@@ -117,6 +117,7 @@ public:
         select3 = "30일";
 
         result1 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
+        result2 = "";
         result3 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
 
     }
@@ -136,6 +137,7 @@ public:
 
         result1 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
         result2 = "틀렸네! 지혜를 좀 더 쌓으셔야겠구만! 이 말을 남기며 나그네는 사라졌다.";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -152,6 +154,7 @@ public:
         select3 = "4개";
 
         result1 = "틀렸네! 지혜를 조금 더 쌓으셔야겠군. 이라고 말하며 나그네는 사라졌다.";
+        result2 = "";
         result3 = "틀렸네! 지혜를 조금 더 쌓으셔야겠군. 이라고 말하며 나그네는 사라졌다.";
 
     }
@@ -244,6 +247,8 @@ public:
         select2 = "효능을 알 수 없는 포션을 산다."; 
         select3 = "딱히 살 물건이 없어보이니 그냥 간다."; //none
 
+        result1 = "";
+        result2 = "";
         result3 = "살 물건이 없고 시간도 없으니 발걸음을 재촉했다.";
 
     }
@@ -278,8 +283,10 @@ public:
 
         select1 = "열어본다.";
         select2 = "무시한다."; //none
-
+    
+        result1 = "";
         result2 = "위험을 감수하고 괜히 열어볼 필요는 없을 거 같다."
+        result3 = "";
 
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
@@ -328,7 +335,11 @@ class BlockStoryStart :public StoryBlock
 public:
     BlockStoryStart()
     {
-        script = "당신의 나라는 사이가 좋지 않은 나라와 광활한 숲을 경계로 있습니다.\n어느날 전쟁의 기미를 눈치챈 국왕은 당신을 적국으로 보내 전쟁의 정보를 얻어오라 명령했습니다.\n당신은 사명감을 가지고 여정을 떠납니다."; //스크립트 초기화
+        script = "당신의 나라는 사이가 좋지 않은 나라와 광활한 숲을 경계로 있습니다.\n어느날 전쟁의 기미를 눈치챈 국왕은 당신을 숲을 지나 적국으로 가 전쟁에 관한 정보를 얻어오라 명령했습니다.\n당신은 사명감을 가지고 여정을 떠납니다."; //스크립트 초기화
+    
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -341,7 +352,11 @@ public:
         script = "드디어 적국에 도착했다. 어디로 가야 전쟁에 대한 정보를 얻을 수 있을까?"; //스크립트 초기화
 
         select1 = "성으로 가본다.";
-        select2 = "암시장으로 가본다."; 
+        select2 = "암시장으로 가본다.";
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -355,6 +370,10 @@ public:
 
         select1 = "정문으로 가자.";
         select2 = "개구멍을 찾아보자."; 
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -365,6 +384,10 @@ public:
     BlockMainStoryCastleDoor()
     {
         script = "정문에 들어서자 경비병들이 보인다."; //스크립트 초기화
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -375,6 +398,10 @@ public:
     BlockMainStoryCastleHole()
     {
         script = "성을 한바퀴돌아 들어갈만한 개구멍을 찾았다."; //스크립트 초기화
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -385,6 +412,10 @@ public:
     BlockMainStoryFinal()
     {
         script = "정보를 찾았다! 이제 가지고 돌아가자!"; //스크립트 초기화
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -395,6 +426,10 @@ public:
     BlockMainStoryMarket()
     {
         script = "암시장이지만 생각보다 활기차고 시끌벅적한 분위기이다. 정보를 찾아보자."; //스크립트 초기화
+        
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -405,6 +440,10 @@ public:
     BlockEndingVictory()
     {
         script = "당신이 얻은 정보로 성공적으로 전쟁을 대비해 승전했습니다!\n당신은 많은 부와 명성을 얻었고 당신의 이름은 오랫동안 기억될 것입니다."; //스크립트 초기화
+    
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -415,6 +454,10 @@ public:
     BlockEndingDefeat()
     {
         script = "당신은 정보를 가져오긴 했으나 거짓 정보였습니다! 잘못된 정보로 전쟁을 준비한 나머지 전쟁에서 패배했고,\n사람들은 당신에게 책임을 묻기 시작했으며 당신의 여정은 감옥에 갇히며 마무리되었습니다."; //스크립트 초기화
+    
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
@@ -425,6 +468,10 @@ public:
     BlockEndingDie()
     {
         script = "hp가 모두 닳았습니다!\n당신의 모험은 여기까지인가보군요...."; //스크립트 초기화
+    
+        result1 = "";
+        result2 = "";
+        result3 = "";
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };
