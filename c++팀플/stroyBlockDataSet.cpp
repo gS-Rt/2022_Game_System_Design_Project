@@ -93,14 +93,17 @@ void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
     }
 }
 
-void Block5::storyBlockFunction(Player& player, StoryQueue* queue)
-{
-    if(playerSelect==1) {
-    }
-    else if (playerSelect == 2) {
-    }
-    else {
-    }
+void Block5::printResult()
+    if(playerSelect==1)
+        cout << endl << result1 << endl;
+    else if (playerSelect == 2)
+        cout << endl << result2 << endl;
+    else
+        cout << endl << result3 << endl;
+
+    cout << endl;
+    Sleep(1000);
+    system("pause");
 }
 
 void Block6::storyBlockFunction(Player& player, StoryQueue* queue)
