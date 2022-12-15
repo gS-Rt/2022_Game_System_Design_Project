@@ -34,6 +34,10 @@ void StoryBlock::scanPlayerInput() //선택 입력
 {
     while (1)
     {
+        if (selectCount == 0) {
+            break;
+        }
+
         cout << endl << "당신의 선택은 ...";
         cin >> playerSelect;
 

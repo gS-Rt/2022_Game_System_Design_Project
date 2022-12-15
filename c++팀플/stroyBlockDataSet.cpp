@@ -312,3 +312,7 @@ void BlockMainStoryCastle::storyBlockFunction(Player& player, StoryQueue* queue)
     else if (playerSelect == 2) {
     }
 }
+
+void BlockStoryStart::storyBlockFunction(Player& player, StoryQueue* queue) {
+
+}

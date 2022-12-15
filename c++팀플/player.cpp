@@ -10,9 +10,9 @@ using namespace std;
 
 Player::Player()
 {
-    hp = 0;
+    hp = 3;
     power = 0;
-    money = 0;
+    money = 200;
     honor = 0;
     invade = 0;
     information = 0;

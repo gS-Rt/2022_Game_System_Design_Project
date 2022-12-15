@@ -6,6 +6,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include "storyBlock.h"
 #include "gameManager.h"
 #include "stroyBlockDataSet.h"
 #include "player.h"
@@ -29,10 +30,6 @@ void GameManager::selectNextBlock()
                 isSame = true;
                 break;
             }
-        }
-
-        if (isSame) {
-            continue;
         }
 
         break;
@@ -94,6 +91,9 @@ void GameManager::CloseGame() //실행하면 반복문 종료
 
 void GameManager::startGame()
 {
+    queue->inqueue(new BlockChoiceStat());
+    queue->inqueue(new BlockStoryStart());
+
     while (true) //메인 루프
     {
 
