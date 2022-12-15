@@ -23,160 +23,131 @@ void StoryBlock::printResult()
 void Block0::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("money", 100);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("invade", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("hp", -2);
+        player.changeStat("honor", -1);
+        player.changeStat("money", 300);
     }
 }
 
 void Block1::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("invade", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("honor", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("hp", -1);
+        player.changeStat("money", 100);
     }
 }
 
 void Block2::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("hp", -1);
+        player.changeStat("money", 1);
+        player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", -200);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("hp",-1);
+        player.changeStat("invade", 1);
     }
 }
 
 void Block3::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("hp", 2);
+        player.changeStat("power", 1);
+        player.changeStat("invade", -1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", -100);
+        player.changeStat("information", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("information", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("hp", -2);
+        player.changeStat("honor", 2);
     }
 }
 
 void Block5::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block6::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block7::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block8::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("money", 300);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("hp", 3);
+        player.changeStat("power", 2);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("information", 2);
     }
 }
 
 void Block9::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("invade", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", 200);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("hp", -1);
+        player.changeStat("invade", 1);
     }
 }
 
@@ -184,142 +155,107 @@ void Block10::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
         player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", 300);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("information", 2);
     }
 }
 
 void Block11::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("invade", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", 300);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("information", 1);
     }
 }
 
 void Block12::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block13::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("power", 1);
+        player.changeStat("honor", -1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("information", 1);
+        player.changeStat("honor", -1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("honor", 3);
     }
 }
 
 void Block14::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
-    }
-    else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void Block15::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("money", -100);
+        player.changeStat("hp", 2);
+        player.changeStat("power", 1);
+        player.changeStat("invade", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("money", -100);
+        player.changeStat("information", 1);
+        player.changeStat("honor", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("money", 300);
     }
 }
 
 void BlockChoiceStat::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
+        player.changeStat("honor", 1);
+        player.changeStat("information", 1);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
+        player.changeStat("hp", 2);
+        player.changeStat("power", 1);
+        player.changeStat("invade", 1);
     }
     else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
+        player.changeStat("money", 1000);
     }
 }
 
 void BlockMainStory::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
-    }
-    else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
 
 void BlockMainStoryCastle::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     if(playerSelect==1) {
-        player.changeStat("hp", -2);
-        player.changeStat("money",200);
     }
     else if (playerSelect == 2) {
-        player.changeStat("invade", 2);
-    }
-    else {
-        player.changeStat("hp",-3);
-        player.changeStat("honor",-2);
-        player.changeStat("money",300);
     }
 }
