@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h>
+#include <time.h>
 #include "storyBlock.h"
 #include "player.h"
 #include "stroyBlockDataSet.h"
@@ -93,37 +94,25 @@ void Block4::storyBlockFunction(Player& player, StoryQueue* queue)
     }
 }
 
-void Block5::printResult()
-    if(playerSelect==1)
-        cout << endl << result1 << endl;
-    else if (playerSelect == 2)
-        cout << endl << result2 << endl;
-    else
-        cout << endl << result3 << endl;
-
-    cout << endl;
-    Sleep(1000);
-    system("pause");
+void Block5::storyBlockFunction(Player& player, StoryQueue* queue)
+{
+    if(playerSelect == 2) {
+        queue.inqueue(new Block8());
+    return;
 }
 
 void Block6::storyBlockFunction(Player& player, StoryQueue* queue)
 {
-    if(playerSelect==1) {
-    }
-    else if (playerSelect == 2) {
-    }
-    else {
-    }
+    if(playerSelect == 3) {
+        queue.inqueue(new Block8());
+    return;
 }
 
 void Block7::storyBlockFunction(Player& player, StoryQueue* queue)
 {
-    if(playerSelect==1) {
-    }
-    else if (playerSelect == 2) {
-    }
-    else {
-    }
+    if(playerSelect == 2) {
+        queue.inqueue(new Block8());
+    return;
 }
 
 void Block8::storyBlockFunction(Player& player, StoryQueue* queue)
@@ -182,13 +171,28 @@ void Block11::storyBlockFunction(Player& player, StoryQueue* queue)
 
 void Block12::storyBlockFunction(Player& player, StoryQueue* queue)
 {
+    srand((unsigned int)time(NULL));
+    int e = rand() % 2;
     if(playerSelect==1) {
+        if(e == 0) {
+
+        }
+        else {
+            
+        }
     }
     else if (playerSelect == 2) {
+        if(e == 0) {
+            
+        }
+        else {
+            
+        }
     }
     else {
     }
 }
+
 
 void Block13::storyBlockFunction(Player& player, StoryQueue* queue)
 {
