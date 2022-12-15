@@ -23,7 +23,7 @@ void GameManager::selectNextBlock()
         bool isSame = false;
 
         srand((unsigned int)time(NULL));
-        num = rand() % 15;
+        num = rand() % 16;
 
         if (num == 8)
             continue;
