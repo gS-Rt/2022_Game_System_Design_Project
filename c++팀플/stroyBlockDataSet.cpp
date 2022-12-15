@@ -172,21 +172,23 @@ void Block11::storyBlockFunction(Player& player, StoryQueue* queue)
 void Block12::storyBlockFunction(Player& player, StoryQueue* queue)
 {
     srand((unsigned int)time(NULL));
-    int e = rand() % 2;
+    int ran = rand() % 2;
     if(playerSelect==1) {
-        if(e == 0) {
-
+        if(ran == 0) {
+            cout << "많은 지식이 적혀있는 백과사전이다. 지식이 늘어났다.";
+            player.changeStat("information", 1);
         }
         else {
-            
+            cout << "재밌는 만화책이다. 기분이 좋아졌다.";
         }
     }
     else if (playerSelect == 2) {
-        if(e == 0) {
-            
+        if(ran == 0) {
+             cout << "엄청난 힘이 느껴진다. 신체 능력이 향상된 것 같다..";
+             player.changeStat("power", 1);
         }
         else {
-            
+             cout << "맛있는 주스인 것 같다. 특별한 효과는 없는 것 같다.";
         }
     }
     else {
@@ -211,9 +213,17 @@ void Block13::storyBlockFunction(Player& player, StoryQueue* queue)
 
 void Block14::storyBlockFunction(Player& player, StoryQueue* queue)
 {
+    srand((unsigned int)time(NULL));
+    int ran = rand() % 2;
     if(playerSelect==1) {
-    }
-    else if (playerSelect == 2) {
+        if(ran == 0) {
+            cout << "미믹이 기습했다! 피해를 입었다.";
+            player.changeStat("hp", -1);
+        }
+        else {
+            cout << "골드가 들어있었다! 두둑하게 챙겼다.";
+            player.changeStat("money", 300);
+        }
     }
 }
 
