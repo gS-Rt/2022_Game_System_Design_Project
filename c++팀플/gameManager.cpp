@@ -17,6 +17,9 @@ void GameManager::selectNextBlock()
     StoryBlock* selectBlock = NULL;
     while (true) //이전 블록과 같은 블록 선택되면 다시 추첨
     {
+        if (!(queue->isEmpty()))
+            return;
+
         bool isSame = false;
 
         srand((unsigned int)time(NULL));

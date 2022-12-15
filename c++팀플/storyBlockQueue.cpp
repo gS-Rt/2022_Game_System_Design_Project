@@ -35,3 +35,8 @@ StoryBlock* StoryQueue::dequeue()
 
     return temp;
 }
+
+bool StoryQueue::isEmpty()
+{
+    return (front == NULL);
+}

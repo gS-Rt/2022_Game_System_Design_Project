@@ -18,4 +18,5 @@ public:
     }
     void inqueue(StoryBlock* storyBlock);
     StoryBlock* dequeue();
+    bool isEmpty();
 };
