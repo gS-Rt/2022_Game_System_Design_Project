@@ -147,7 +147,7 @@ class Block7 :public StoryBlock
 public:
     Block7()
     {
-        script = "한 나그네가 길에 서있다. 그 나그네는 자신의 수수께끼를 맞춰보라고 한다.\n촛불 10개를 키고 책을 읽던 남자가 있다. 열려있는 창문에서 바람이 불어와 2개의 촛불이 꺼지고, 얼마후 또다시 바람이 불어와 촛불 4개를 꺼트렸다.\n이후 남자는 창문을 닫고 잠을 청했는데, 그러면 다음날 아침에 초가 몇 개가 남아있을까?"; //스크립트 초기화
+        script = "한 나그네가 길에 서있다. 그 나그네는 자신의 수수께끼를 맞춰보라고 한다.\n촛불 10개를 키고 책을 읽던 남자가 있다. 열려있는 창문에서 바람이 불어와 2개의 촛불이 꺼지고, \n얼마후 또다시 바람이 불어와 촛불 4개를 꺼트렸다.이후 남자는 창문을 닫고 잠을 청했는데, \n그러면 다음날 아침에 초가 몇 개가 남아있을까?"; //스크립트 초기화
 
         select1 = "10개";
         select2 = "6개";
@@ -225,7 +225,7 @@ public:
         script = "건달패가 시민들의 물건을 빼앗고 있다. 건달패의 마차에서 물건을 훔칠 수 있을 것 같다. 어떻게 할까?"; //스크립트 초기화
 
         select1 = "건달을 공격해 물건을 되찾아 준다."; //명예+
-        select2 = "물건을 뺏아 상인에게 넘긴다."; //돈+
+        select2 = "물건을 뺏어 상인에게 팔아 넘긴다."; //돈+
         select3 = "건달패의 마차를 뒤져본다."; //정보+
 
         result1 = "사람들이 연신 감사를 표한다. 평판이 좋아졌다.";
@@ -303,7 +303,7 @@ public:
         select2 = "임무를 성공할 수 있게 해달라고 소원을 빈다."; //돈-, 정보+, 명성+
         select3 = "연못에 있는 동전을 챙긴다."; //돈+
 
-        result1 = ""; //카리스마 +
+        result1 = "";
         result2 = "";
         result3 = "소원같은 건 믿지 않는다. 실리적으로 돈을 챙겼다.";
 
@@ -316,15 +316,15 @@ class BlockChoiceStat :public StoryBlock
 public:
     BlockChoiceStat()
     {
-        script = "모험을 시작하기전에 물어볼게요. 당신은 누구인가요?"; //스크립트 초기화
+        script = "좋아요, 그럼 당신은 누구인가요?"; //스크립트 초기화
 
-        select1 = "저는 뛰어난 학자입니다."; //명성+, 정보력++
+        select1 = "저는 뛰어난 학자입니다."; //명성+, 정보력+
         select2 = "저는 용맹한 군인입니다."; //hp+, 힘+, 잠입+
         select3 = "저는 돈많은 백수입니다."; //돈+
 
         result1 = "할 수 있다는 자신감이 차오른다. 씩씩하게 모험을 시작한다.";
-        result2 = "건강해지는 느낌이 든다. 신체능력이 올라간 느낌이다.";
-        result3 = "믿을 것은 돈뿐이다. 모험을 시작하자.";
+        result2 = "건강해지는 느낌이 든다. 힘차게 모험을 시작한다.";
+        result3 = "믿을 것은 돈뿐이다. 이제 모험을 시작하자.";
 
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
@@ -411,7 +411,7 @@ class BlockMainStoryFinal :public StoryBlock
 public:
     BlockMainStoryFinal()
     {
-        script = "정보를 찾았다! 이제 가지고 돌아가자!"; //스크립트 초기화
+        script = "성안을 탐색하다 문서 보관실을 발견했다! 정보를 구해 돌아가자!"; //스크립트 초기화
         
         result1 = "";
         result2 = "";
@@ -472,6 +472,25 @@ public:
         result1 = "";
         result2 = "";
         result3 = "";
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
+};
+
+class BlockParent : public StoryBlock
+{
+public:
+    BlockParent()
+    {
+        script = "모험을 시작하기전에 물어볼게요. 당신의 부모님은 어떤 분이시죠?"; //스크립트 초기화
+
+        select1 = "저희 부모님은 거상이십니다."; //돈+
+        select2 = "저희 부모님은 군인이십니다."; //hp+, 힘+
+        select3 = "저희 부모님은 고위 공무원입니다."; //돈+
+
+        result1 = "(보유 자금이 증가합니다)";
+        result2 = "(신체 능력이 좋아집니다)";
+        result3 = "(명성과 지식이 늘어납니다)";
+
     }
     virtual void storyBlockFunction(Player& player, StoryQueue* queue); //플레이어 객체 참조로 값 변경 가능
 };

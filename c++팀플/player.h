@@ -16,7 +16,7 @@ private:
     int honor; //카리스마, 교섭력, 언변 능력
     int invade; //잠입, 침투, 위장 능력
     int information; //엔딩 분기를 위한 정보량
-    bool isGameOver = false;
+    bool isGameOver = false; //게임 끝을 판단할 변수
 public:
     Player();
     int peekStat(string type); //참조할 스탯 데이터 이름 매개로 넣으면 반환

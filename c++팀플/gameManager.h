@@ -18,7 +18,7 @@ protected:
     Player player; //플레이어 능력치 관리 클래스
     int num; //선택된 블록 인덱스 숫자
     int runCycle; //진행된 블록 수
-    int pri[13]; //직전에 삽입된 블록 인덱스 숫자
+    int pri[13]; //인카운터 중복을 막기위한 기존 인카운터 저장용 배열
 
 public:
     GameManager()
@@ -37,6 +37,5 @@ public:
 
     void runStoryBlock();
 
-    void CloseGame(GameManager gm); //종료 트리거 캡슐화
-
+    void CloseGame(GameManager gm);
 };

@@ -92,14 +92,15 @@ void GameManager::runStoryBlock()
 
 void GameManager::startGame()
 {
+    queue->inqueue(new BlockParent());
     queue->inqueue(new BlockChoiceStat());
     queue->inqueue(new BlockStoryStart());
 
     while (true) //메인 루프
     {
-        if (player.peekStat("hp") <= 0) {
-            queue->inqueue(new BlockEndingDie());
+        if (player.peekStat("hp") <= 0) { //hp가 다 떨어진 사망엔딩
             player.changeStat("hp", player.peekStat("hp"));
+            queue->inqueue(new BlockEndingDie());
         }
 
         if (player.getGameOver()) //true면 반복문 종료
@@ -109,7 +110,7 @@ void GameManager::startGame()
 
         if (runCycle == 13)
         {
-            queue->inqueue(new BlockMainStory());
+            queue->inqueue(new BlockMainStory()); //13번째 인카운터 이후는 메인 스토리 진입
         }
 
         system("cls");

@@ -301,11 +301,11 @@ void BlockChoiceStat::storyBlockFunction(Player& player, StoryQueue* queue)
         player.changeStat("invade", 1);
     }
     else {
-        player.changeStat("money", 1000);
+        player.changeStat("money", 500);
     }
 }
 
-void BlockMainStory::storyBlockFunction(Player& player, StoryQueue* queue)
+void BlockMainStory::storyBlockFunction(Player& player, StoryQueue* queue) //성 루트와 암시장 루트로 갈림
 {
     if(playerSelect==1) {
         queue->inqueue(new BlockMainStoryCastle());
@@ -329,15 +329,15 @@ void BlockStoryStart::storyBlockFunction(Player& player, StoryQueue* queue) {
 
 }
 
-void BlockMainStoryCastleDoor::storyBlockFunction(Player& player, StoryQueue* queue) {
+void BlockMainStoryCastleDoor::storyBlockFunction(Player& player, StoryQueue* queue) { //성  루트에선 명성, 힘, 잠입, 정보 스탯이 골고루 필요
     if (player.peekStat("honor") >= 3)
-        cout << "높은 명성덕에 경비병의 안내를 따라 성안으로 이동했다.";
+        cout << "높은 명성덕에 경비병의 안내를 따라 성안으로 이동했다.\n";
     else {
         if (player.peekStat("power") >= 3) {
-            cout << "경비병을 가뿐하게 물리치고 성에 들어갔다.";
+            cout << "경비병을 가뿐하게 물리치고 성에 들어갔다.\n";
         }
         else {
-            cout << "경비병을 뚫고 성에 들어갔다. 꽤 심한 부상을 입었다.";
+            cout << "경비병을 뚫고 성에 들어갔다. 꽤 심한 부상을 입었다.\n";
             player.changeStat("hp", -2);
         }
     }
@@ -347,17 +347,17 @@ void BlockMainStoryCastleDoor::storyBlockFunction(Player& player, StoryQueue* qu
 
 void BlockMainStoryCastleHole::storyBlockFunction(Player& player, StoryQueue* queue) {
     if (player.peekStat("invade") >= 3) {
-        cout << "조심스레 성안에 잠입했다. 다행히 들키지 않았다.";
+        cout << "조심스레 성안에 잠입했다. 다행히 들키지 않았다.\n";
     }
     else {
-        cout << "경비병에게 걸려 부상을 입었지만, 들어오는데엔 성공했다.";
+        cout << "경비병에게 걸려 부상을 입었지만, 들어오는데엔 성공했다.\n";
         player.changeStat("hp", -1);
     }
 
     queue->inqueue(new BlockMainStoryFinal());
 }
 
-void BlockMainStoryMarket::storyBlockFunction(Player& player, StoryQueue* queue) {
+void BlockMainStoryMarket::storyBlockFunction(Player& player, StoryQueue* queue) { //암시장 루트에선 돈과 운이 중요
     cout << "당신의 모든 돈을 털어 정보를 구매했다.";
     bool isReal = false;
     int money = player.peekStat("money");
@@ -400,3 +400,18 @@ void BlockEndingDie::storyBlockFunction(Player& player, StoryQueue* queue) {
     player.GameOver();
 }
 
+void BlockParent::storyBlockFunction(Player& player, StoryQueue* queue)
+{
+    if (playerSelect == 1) {
+        player.changeStat("money", 500);
+    }
+    else if (playerSelect == 2) {
+        player.changeStat("hp", 1);
+        player.changeStat("power", 1);
+        player.changeStat("invade", 1);
+    }
+    else {
+        player.changeStat("honor", 1);
+        player.changeStat("information", 1);
+    }
+}
