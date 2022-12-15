@@ -15,107 +15,113 @@ class Block0 :public StoryBlock
 public:
     Block0()
     {
-        script = "±æÀ» °È´Ù ½É°¢ÇÑ ºÎ»óÀ» ÀÔ°í ¾²·ÁÀúÀÖ´Â »ç¶÷À» ¹ß°ßÇß´Ù. ±×´Â ÀÚ½ÅÀ» »óÀÎÀÌ¶ó°í ¸»ÇÏ¸ç ¾ß¼ö¿¡°Ô ½À°ÝÀ» ´çÇß´Ù°í ÇÏ°í ÀÚ½ÅÀº °¡¸ÁÀÌ ¾ø´Ù°í ¸»ÇÏ¸ç ±ÙÃ³¿¡ ÀÚ½ÅÀ» ÀÌ·¸°Ô ¸¸µç ¾ß¼ö°¡ ±ÙÃ³¿¡ ÀÖÀ»Áöµµ ¸ð¸£´Ï ¾î¼­ µµ¸Á°¡¶ó°í ¸»Çß´Ù. ´ç½ÅÀÇ ¼±ÅÃÀº?";
+        script = "ê¸¸ì„ ê±·ë‹¤ ì‹¬ê°í•œ ë¶€ìƒì„ ìž…ê³  ì“°ëŸ¬ì ¸ìžˆëŠ” ì‚¬ëžŒì„ ë°œê²¬í–ˆë‹¤. ê·¸ëŠ” ìžì‹ ì„ ìƒì¸ì´ë¼ ì†Œê°œí•˜ë©° ì•¼ìˆ˜ì˜ ìŠµê²©ì„ ë°›ì•˜ë‹¤ê³  í•œë‹¤.\nìžì‹ ì€ ê°€ë§ì´ ì—†ë‹¤ë©° ì•¼ìˆ˜ê°€ ì•„ì§ ê·¼ì²˜ì— ìžˆì„ì§€ ëª¨ë¥´ë‹ˆ ë„ë§ê°€ë¼ê³  ë§í•œë‹¤.ì–´ë–»ê²Œ í• ê¹Œ? ";
 
-        select1 = "1.±×¸¦ Ä¡·áÇÏ°í µµ¿ÍÁØ´Ù."; //¼±ÅÃÁö 1
-        select2 = "2.½Å¼ÓÈ÷ µµ¸Á°£´Ù. ."; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "±×°¡ °¡Áö°í ÀÖ´Â °¡¹æÀ» °­Å»ÇÑ´Ù."; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "ê·¸ë¥¼ ì¹˜ë£Œí•˜ê³  ë„ì™€ì¤€ë‹¤."
+        select2 = "ì‹ ì†í•˜ê²Œ ìžë¦¬ë¥¼ ëœ¬ë‹¤."
+        select3 = "ê·¸ì˜ ê°€ë°©ì„ ê°•íƒˆí•œë‹¤."
 
-        result1 = "±×¸¦ Ä¡·áÇÏ´øÁß ±ÙÃ³¿¡ ÀÖ´ø ¾ß¼ö°¡ ½À°ÝÇÏ¿´Áö¸¸ ¼º°øÀûÀ¸·Î ¹°¸®ÃÆ´Ù. »óÀÎÀº °¨»ç¸¦ Ç¥ÇÏ°í ¼ÒÁ¤ÀÇ µ·À» ÁÖ°í ¶°³µ´Ù."; //¼±ÅÃÁö 1 °á°ú
-        result2 = "±ÙÃ³¿¡ ±× ¾ß¼ö°¡ ÀÖ´Â ³¦»õ¸¦ ´À²¸ ½Å¼ÓÈ÷ µµ¸Á°¬´Ù. ±× »óÀÎÀÌ ¾î¶»°Ô µÉÁö´Â ¸ð¸£°ÚÁö¸¸, ÀáÀÔ´É·ÂÀÌ Á¶±Ý ¿Ã¶ó°¬´Ù."; //¼±ÅÃÁö 2 °á°ú(¼±ÅÃ)
-        result3 = "»óÀÎÀÎ ±×ÀÇ °¡¹æÀ» »¯À¸·Á°í ½ÃµµÇÏ´Ù ¾ß¼ö°¡ µ¤ÃÆ´Ù. »ì¾Æ³²°í ±×°¡ °¡Áø °¡¹æ¶ÇÇÑ °­Å»ÇÏ±ä ÇßÁö¸¸ »ó´çÈ÷ ´ÙÄ¡°í Ä«¸®½º¸¶°¡ ÇÏ¶ôÇÏ¿´´Ù."; //¼±ÅÃÁö 3 °á°ú(¼±ÅÃ)
+        result1 = "ì¹˜ë£Œë¥¼ í•˜ë‹¤ ì•¼ìˆ˜ê°€ ìŠµê²©í–ˆìœ¼ë‚˜ ê°€ë¿ížˆ ë¬¼ë¦¬ì³¤ë‹¤. ìƒì¸ì€ ê°ì‚¬ë¥¼ í‘œí•˜ë©° ì†Œì •ì˜ ëˆì„ ì£¼ë©° ë– ë‚¬ë‹¤.";
+        result2 = "ìœ„í—˜í•œ ê³³ì— ì˜¤ëž˜ ìžˆì„ í•„ìš”ëŠ” ì—†ë‹¤. ì‹ ì†í•˜ê²Œ ìžë¦¬ë¥¼ ë–´ë‹¤. ëª¸ì´ ë¹¨ë¼ì§„ ëŠë‚Œì´ë‹¤.";
+        result3 = "ê°€ë°©ì„ ê°•íƒˆí•˜ë ¤ë‹¤ ì•¼ìˆ˜ì˜ ìŠµê²©ì„ ë°›ì•˜ë‹¤. ê°€ë°©ì„ ë¹¼ì•—ê¸´ í–ˆì§€ë§Œ ìƒì²˜ë¥¼ ìž…ì—ˆê³  ëª…ì„±ì— ì•ˆì¢‹ì€ ì˜í–¥ì´ ìžˆì„ ê²ƒ ê°™ë‹¤.";
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block1 :public StoryBlock
 {
 public:
     Block1()
     {
-        script = "±æÀ» °È´Ù »ç¶÷ÀÌ Àû±¹ÀÇ ±ºÀÎÀ¸·Î º¸ÀÌ´Â »ç¶÷°ú ÇÑ ½Ã¹ÎÀÌ °Ý·ÄÇÏ°Ô ¸»½Î¿òÀ» ÇÏ°íÀÖ´Â ¸ð½ÀÀ» ¸ñ°ÝÇÏ¿´´Ù. ½Ã¹ÎÀº Àú ±ºÀÎÀÌ ÀÚ½ÅÀÇ µþÀ» ³³Ä¡ÇÏ°í ÀÖ´Ù¸ç ³ª¿¡°Ô µµ¿òÀ» ¿äÃ»ÇÏ¿´´Ù. ±ºÀÎÀº ÇÑ¸í»ÓÀÌ¶ó Á¦¾ÐÇÒ ¼ö ÀÖ°ÚÁö¸¸, Àû±¹ÀÇ ±ºÀÎÀ» °Çµé¿©ºÃÀÚ ÁÁÀºÀÏÀº ¾øÀ»°Í °°´Ù. ´ç½ÅÀÇ ¼±ÅÃÀº?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ì € ë©€ë¦¬ êµ°ì¸ê³¼ ì‹œë¯¼ì´ ë§ë‹¤íˆ¼í•˜ëŠ” ëª¨ìŠµì´ ë³´ì¸ë‹¤. ë“¤ì–´ë³´ë‹ˆ êµ°ì¸ì´ ì‹œë¯¼ì˜ ë”¸ì„ ë‚©ì¹˜í–ˆë‹¤ê³  ì£¼ìž¥í•˜ëŠ” ë“¯í•˜ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?";
 
-        select1 = "½Ã¹ÎÀ» µµ¿Í ±ºÀÎÀ» »ç»ìÇÑ´Ù."; //¼±ÅÃÁö 1
-        select2 = "¹«½ÃÇÏ°í Áö³ª°£´Ù."; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "±ºÀÎÀ» ¼³µæÇØº»´Ù."; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "ë¬´ì‹œí•˜ê³  ì§€ë‚˜ê°„ë‹¤.";
+        select2 = "ëŒ€í™”ì— ë¼ì–´ë“¤ì–´ë³¸ë‹¤.";
+        select3 = "ì‹œë¯¼ì„ ë„ì™€ êµ°ì¸ì„ ê³µê²©í•œë‹¤.";
 
-        result1 = "±ºÀÎÀ» Á¦¾ÐÇÏ´Â °úÁ¤¿¡¼­  ¹Ý°ÝÀ» ´çÇØ HP°¡ ÁÙ¾îµé¾ú´Ù. ½Ã¹ÎÀº °¨»ç¸¦ Ç¥ÇÏ¸ç ¼ÒÁ¤ÀÇ µ·À» Áá´Ù."; //¼±ÅÃÁö 1 °á°ú
-        result2 = "±¦È÷ ¿«ÀÌ±â ½ÈÀ¸´Ï µÎ»ç¶÷¿¡°Ô µéÅ°Áö ¾Ê°í ¸ô·¡ Áö³ª°¬´Ù. ÀáÀÔ´É·ÂÀÌ Á¶±Ý ¿Ã¶ó°¬´Ù."; //¼±ÅÃÁö 2 °á°ú(¼±ÅÃ)
-        result3 = "±ºÀÎÀ» ¼³µæ°ú Çù¹ÚÀ» ÇÏ¿© °á±¹ ³³Ä¡´Â ¸·¾Ò´Ù. ±ºÀÎÀº ³ªÀÇ ¾ó±¼À» ±â¾ïÇÏ°Ú´Ù°í ÇÏ¸é¼­ ¶°³µ´Ù. Ä«¸®½º¸¶°¡ Á¶±Ý »ó½ÂÇÏ¿´´Ù."; //¼±ÅÃÁö 3 °á°ú(¼±ÅÃ)
+        result1 = "ê´œížˆ ê°ˆë“±ì— ì—®ì¼ í•„ìš”ëŠ” ì—†ë‹¤. ê°€ë˜ ê¸¸ë¡œ ë°œê±¸ìŒì„ ì˜®ê²¼ë‹¤.";
+        result2 = "ëŒ€í™”ì™€ ì„¤ë“ì„ í†µí•´ ì‹œë¯¼ì˜ ë”¸ì„ ë˜ì°¾ì•˜ë‹¤. ëª…ì„±ì´ ì¡°ê¸ˆ ì˜¬ëžë‹¤.";
+        result3 = "êµ°ì¸ì„ ê³µê²©í•´ ë”¸ì„ ë˜ì°¾ì„ ìˆ˜ ìžˆì—ˆë‹¤. ë¶€ìƒì„ ì¡°ê¸ˆ ìž…ì—ˆìœ¼ë‚˜ ì‚¬ë¡€ê¸ˆì„ ë°›ì•˜ë‹¤.";
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block2 :public StoryBlock
 {
 public:
     Block2()
     {
-        script = "°­µµµé ¿¡°Ô ½À°ÝÀ» ´çÇß´Ù! °­µµµéÀº ³»°¡ °¡Áö°í ÀÖ´Â °ñµå¸¦ ÀüºÎ ³Ñ±â¸é ¸ñ¼û¸¸Àº »ì·ÁÁÖ°Ú´Ù°í ÇÏ¸ç À§ÇùÇÏ¿´´Ù. º¸ÀÌ´Â °­µµÀÇ ¼ö´Â 3¸íÀÌ¸ç ±ÙÃ³¿¡ ´õ ÀÖÀ»¼öµµ ÀÖ´Ù. ¾î¶»°Ô ÇÒ °ÍÀÎ°¡? "; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ê°•ë„ë“¤ì—ê²Œ ìŠµê²©ì„ ë‹¹í–ˆë‹¤! ê°•ë„ë“¤ì€ ëˆë§Œ ê±´ë„¤ë©´ ê³±ê²Œ ë³´ë‚´ì£¼ê² ë‹¤ê³  í•œë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?";
 
-        select1 = "¸Â¼­ ½Î¿î´Ù."; //¼±ÅÃÁö 1
-        select2 = "µ·À» °Ç³»ÁØ´Ù."; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "µµ¸Á°£´Ù."; //¼±ÅÃÁö 3(¼±ÅÃ)
-        result1 = "»ó´çÇÑ »óÃ³¸¦ ÀÔ¾úÁö¸¸ °­µµµéÀ» ¸ðµÎ Ã³¸®Çß´Ù. ±×µéÀÌ °¡Áö°íÀÖ´ø µ·°ú Áöµµ¸¦ ¾ò¾ú´Ù."; //HP ±ðÀÓ, µ·+,Á¤º¸·Â+
-        result2 = "¾Æ¹«¸® Á¤½Ä ÈÆ·ÃÀ» ¹ÞÀº º´»ç¶óµµ È¥ÀÚ¼­ ¼ÂÀ» ÀÌ±æ¼ö´Â ¾ø´Ù. ±×µé°ú Çù»óÀ»ÇÏ¿© Á¶±ÝÀÇ µ·¸¸ÁÖ°í »ì¾Æ³²¾Ò´Ù."; //µ· -100, Çù»ó·Â + 
-        result3 = "¾à°£ÀÇ ÇÇÇØ¸¦ ÀÔ±ä ÇßÁö¸¸ ¼º°øÀûÀ¸·Î µµ¸ÁÃÆ´Ù."; //HP-,Ä§Åõ·° +
+        select1 = "ë§žì„œ ì‹¸ìš´ë‹¤.";
+        select2 = "ëˆì„ ê±´ë‚´ì¤€ë‹¤.";
+        select3 = "ë„ë§ê°„ë‹¤.";
+        
+        result1 = "ì‹¬í•œ ë¶€ìƒì„ ìž…ì—ˆì§€ë§Œ ê°•ë„ë“¤ì„ ë¬¼ë¦¬ì³¤ë‹¤. ê·¸ë“¤ì´ ê°€ì§€ê³  ìžˆë˜ ëˆê³¼ ì§€ë„ë¥¼ ì–»ì—ˆë‹¤.";
+        result2 = "ë‹¤ìˆ˜ë¥¼ ìƒëŒ€í•˜ê¸°ì—” ë¬´ë¦¬ê°€ ìžˆë‹¤. ë‹¤í–‰ížˆ ê·¸ë“¤ì€ ëˆë§Œ ë°›ê³  ê°€ë˜ ê¸¸ì„ ê°”ë‹¤.";
+        result3 = "ì•½ê°„ì˜ í”¼í•´ë¥¼ ìž…ì—ˆì§€ë§Œ ë¬´ì‚¬ížˆ ë„ë§ì³¤ë‹¤. ëª¸ì´ ë¹¨ë¼ì§„ ëŠë‚Œì´ë‹¤.";
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block3 :public StoryBlock
 {
 public:
     Block3()
     {
-        script = "Å»¿µº´À¸·Î º¸ÀÌ´Â ±ºÀÎÀ» ¸¸³µ´Ù. ±×´Â ºñµµ´öÀûÀÎ ±º´ë¿¡¼­ µµ¸ÁÃÄ³ª¿Ô°í ºÎ¸ð´ÔÀ» º¸±âÀ§ÇØ °íÇâÀ¸·Î µ¹¾Æ°¡´Â ÁßÀÌ¶ó°í ÇÑ´Ù. ±×´Â »ó´çÈ÷ ¾ßÀ§¾îº¸ÀÌ¸ç ±×°¡ °¡Áö°í ÀÖ´Â Àåºñ¸¦ ¾òÀ» ¼ö ÀÖÀ»°Í °°´Ù. ¾î¶»°Ô ÇÒ °ÍÀÎ°¡?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ë¹„í‹€ê±°ë¦¬ëŠ” ì²­ë…„ì„ ë§Œë‚¬ë‹¤. ê·¸ëŠ” ë¹„ë„ë•ì ì¸ êµ°ëŒ€ì—ì„œ ë„ë§ì³ ê³ í–¥ìœ¼ë¡œ ê°€ëŠ” ì¤‘ì´ë¼ í•œë‹¤. ê·¸ëŠ” ì§€ì³ìžˆê³  ì¢‹ì€ ìž¥ë¹„ë¥¼ ê°€ì§„ë“¯í•˜ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?";
 
-        select1 = "Àåºñ¸¦ °­Å»ÇÑ´Ù."; //¼±ÅÃÁö 1
-        select2 = "±×¿¡°Ô 100°ñµå¸¦ ÁØ´Ù."; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "±×³É Áö³ªÄ£´Ù."; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "ìž¥ë¹„ë¥¼ ê°•íƒˆí•œë‹¤.";
+        select2 = "ì•½ê°„ì˜ ëˆê³¼ í•¨ê»˜ ê²©ë ¤ë¥¼ ê±´ë„¨ë‹¤.";
+        select3 = "ê·¸ë¥¼ ë‹¤ë…ì´ë©° ì‘ì›í•´ì¤€ë‹¤.";
 
-        result1 = "±×°¡ °¡Áö°íÀÖ´Â Àåºñ¸¦ »¯À¸·Á´Ù Áö³ªÄ£ ÀúÇ×¿¡ ±×¸¦ Á×¿´´Ù. Àåºñ¸¦ ¾ò±äÇÏ¿´Áö¸¸, ±×ÀÇ Ç°¼Ó¿¡¼­ ºÎ¸ð´Ô²² ¾´ ÆíÁö¸¦ º¸°í ¾ç½É¿¡ °¡Ã¥À» ´À²»´Ù."; //hp+,Èû+,Ä«¸®½º¸¶--
-        result2 = "±×ÀÇ ¿©Á¤À» µ½±âÀ§ÇØ 100°ñµå¸¦ Àû¼±ÇØÁÖ¾ú´Ù. ±×´Â °¨»ç¸¦ Ç¥ÇÏ¸ç ½£¼Ó¿¡ ÀÚ½ÅÀÌ ÀÖ´ø ÀüÃÊ±âÁöÀÇ À§Ä¡¸¦ ¾Ë·ÁÁÖ¾ú°í, ±×°÷À» ÇÇÇØ°¡¶ó°í Á¶¾ðÇØÁÖ¾ú´Ù."; //µ· -100, ¿£µùÀ» À§ÇÑ Á¤º¸·Â ++
-        result3 = "±×ÀÇ ¿©Á¤À» ÀÀ¿øÇÏ¸ç ¶°³µ´Ù."; //none
+        result1 = "ê·¸ì˜ ìž¥ë¹„ë¥¼ ë¹¼ì•—ìœ¼ë ¤ë‹¤ ê·¸ë¥¼ ì£½ì´ê³  ë§ì•˜ë‹¤. ê·¸ì˜ ìž¥ë¹„ë¥¼ í†µí•´ íšŒë³µí•  ìˆ˜ ìžˆì—ˆê³  ë” ê°•í•´ì¡Œë‹¤. í•˜ì§€ë§Œ ëª…ì„±ì—” ì•ˆì¢‹ì€ ì˜í–¥ì´ ìžˆì„ ê²ƒê°™ë‹¤.";
+        result2 = "ê·¸ì˜ ì—¬ì •ì„ ë„ìš°ë ¤ ê³¨ë“œë¥¼ ì¤¬ë‹¤. ê·¸ëŠ” ê°ì‚¬ë¥¼ í‘œí•˜ë©° ìžì‹ ì´ ìžˆë˜ êµ°ëŒ€ì™€ ì „ì´ˆê¸°ì§€ì— ëŒ€í•´ ì•Œë ¤ì£¼ë©°, ì¡°ì‹¬í•˜ë¼ ì¡°ì–¸í•´ì£¼ì—ˆë‹¤.";
+        result3 = "ê·¸ì˜ ì—¬ì •ì„ ì‘ì›í•´ì£¼ì—ˆë‹¤. ë¬´ì‚¬ížˆ ê·¸ê°€ ë¬´ì‚¬ížˆ ê³ í–¥ì— ëŒì•„ê°ˆ ìˆ˜ ìžˆê¸°ë¥¼.";
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block4 :public StoryBlock
 {
 public:
     Block4()
     {
-        script = "½£À» Áö³ª´Ù ½Ã²ô·¯¿î ¼Ò¸®°¡ µé·Á È®ÀÎÇØ º¸´Ï µµÀûµéÀÇ Àº½ÅÃ³¸¦ ¹ß°ßÇß´Ù. »ó´çÈ÷ ¸¹Àº ¾çÀÇ Àü¸®Ç°¶ÇÇÑ º¸ÀÎ´Ù. ¾î¶»°Ô ÇÒ°ÍÀÎ°¡?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ìˆ¨ê²¨ì ¸ìžˆë˜ ë„ì ì˜ ì€ì‹ ì²˜ë¥¼ ë°œê²¬í–ˆë‹¤! ìƒë‹¹í•œ ê·€ì¤‘í’ˆë“¤ì´ ë³´ì¸ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "ÀáÀÔÇØ¼­ Àü¸®Ç°À» ÈÉÃÄº»´Ù."; //¼±ÅÃÁö 1
-        select2 = "À§Ä¡¸¸ È®ÀÎÇÏ°í °¡´ø±æÀ» °£´Ù."; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "ÀüºÎ Á×ÀÌ°í ¾àÅ»ÇÑ´Ù!"; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "ì¡°ì‹¬ìŠ¤ë ˆ ì „ë¦¬í’ˆì„ í›”ì³ë³¸ë‹¤."; //ì„ íƒì§€ 1
+        select2 = "ì§€ë„ì— ìœ„ì¹˜ë¥¼ ê¸°ë¡í•˜ê³  ë– ë‚œë‹¤."; //ì„ íƒì§€ 2(ì„ íƒ)
+        select3 = "ë„ì ë–¼ë¥¼ ì†Œíƒ•í•œë‹¤."; //ì„ íƒì§€ 3(ì„ íƒ)
 
-        result1 = "ÀáÀÔ¿¡ ¼º°øÇÏ¿© µ·À» ¾ò¾ú´Ù."; //µ·+500, if ÀáÀÔ·Â=<7(ÀáÀÔ½ÇÆÐ, hp¼ÒÆø ±ðÀÌ°í µµ¸ÁÄ§)
-        result2 = "À§Ä¡¸¦ Áöµµ¿¡ ±â·ÏÇÏ°í °¡´ø±æÀ» °£´Ù."; //Á¤º¸·Â +100
-        result3 = "½À°ÝÇßÁö¸¸ ¿¹»óº¸´Ù ³Ê¹« ¸¹Àº µµÀûÀÌ ±â´Ù¸®°í ÀÖ¾ú´Ù. »ó´çÇÑ ÇÇÇØ¸¦ ÀÔ°í µµ¸ÁÃÆ´Ù."; //hp -3
+        result1 = "ë¬´ì‚¬ížˆ ìž ìž…ì— ì„±ê³µí•´ í›”ì¹˜ëŠ”ë° ì„±ê³µí–ˆë‹¤. ê½¤ ë§Žì€ ëˆì„ ì–»ì„ ìˆ˜ ìžˆì„ ê²ƒ ê°™ë‹¤."; //ëˆ+500, if ìž ìž…ë ¥=<7(ìž ìž…ì‹¤íŒ¨, hpì†Œí­ ê¹Žì´ê³  ë„ë§ì¹¨)
+        result2 = "ì§€ë„ì— ìƒˆë¡œìš´ ì •ë³´ë¥¼ ê¸°ë¡í–ˆë‹¤. ì •ë³´ë ¥ì´ ëŠ˜ì—ˆë‹¤."; //ì •ë³´ë ¥ +100
+        result3 = "ì˜ˆìƒë³´ë‹¤ ë„ì ë–¼ê°€ ë§Žì•˜ë‹¤. ìƒë‹¹í•œ í”¼í•´ë¥¼ ìž…ì—ˆë‹¤."; //hp -3
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block5 :public StoryBlock
 {
 public:
     Block5()
     {
-        script = "±æÀ» °É¾î°¡´Ù ³ª±×³×¸¦ ¸¸³µ´Ù. ±× ³ª±×³×´Â ÀÚ½ÅÀÌ ³»´Â ¼ö¼ö²²³¢¸¦ ¸ÂÃçº¸¶ó°í ÇÑ´Ù.||½Å±âÇÑ ÁÖ¸Ó´Ï¿¡ µ¿ÀüÀ» ÇÑ°³ ³ÖÀ¸¸é ´ÙÀ½³¯ µÎ°³°¡ µÇ°í, ±×´ÙÀ½³¯ 4°³°¡ µÈ´Ù. ÀÌ ÁÖ¸Ó´Ï°¡ °¡µæÂ÷±â±îÁö 60ÀÏÀÌ °É·È´Ù¸é, Ã³À½¿¡ µ¿ÀüÀ» µÎ°³¸¦ ³ÖÀ¸¸é ÀÌ ÁÖ¸Ó´Ï°¡ ´Ù Â÷±â±îÁö ¸îÀÏÀÌ °É¸±±î?|| ´ç½ÅÀÇ ´äÀº? "; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "í•œ ë‚˜ê·¸ë„¤ê°€ ê¸¸ì— ì„œìžˆë‹¤. ê·¸ ë‚˜ê·¸ë„¤ëŠ” ìžì‹ ì˜ ìˆ˜ìˆ˜ê»˜ë¼ë¥¼ ë§žì¶°ë³´ë¼ê³  í•œë‹¤.\nì‹ ê¸°í•œ ì£¼ë¨¸ë‹ˆì— ë™ì „ì„ í•œê°œ ë„£ìœ¼ë©´ ë‹¤ìŒë‚  ë‘ê°œê°€ ë˜ê³ , ê·¸ë‹¤ìŒë‚  4ê°œê°€ ëœë‹¤. ì´ ì£¼ë¨¸ë‹ˆê°€ ê°€ë“ì°¨ê¸°ê¹Œì§€ 60ì¼ì´ ê±¸ë ¸ë‹¤ë©´, ì²˜ìŒì— ë™ì „ì„ ë‘ê°œë¥¼ ë„£ìœ¼ë©´ ì´ ì£¼ë¨¸ë‹ˆê°€ ë‹¤ ì°¨ê¸°ê¹Œì§€ ë©°ì¹ ì´ ê±¸ë¦´ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "60"; //¼±ÅÃÁö 1
-        select2 = "59"; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "30"; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "60ì¼"; //ì„ íƒì§€ 1
+        select2 = "59ì¼"; //ì„ íƒì§€ 2(ì„ íƒ)
+        select3 = "30ì¼"; //ì„ íƒì§€ 3(ì„ íƒ)
 
-        result1 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù."; //¼±ÅÃÁö 1 °á°ú
-        result2 = "Block8·Î"; //¼±ÅÃÁö 2 °á°ú(¼±ÅÃ)
-        result3 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù."; //¼±ÅÃÁö 3 °á°ú(¼±ÅÃ)
+        result1 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¢€ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ¬ë§Œ! ì´ ë§ì„ ë‚¨ê¸°ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 1 ê²°ê³¼
+        result2 = "Block8ë¡œ"; //ì„ íƒì§€ 2 ê²°ê³¼(ì„ íƒ)
+        result3 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¢€ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ¬ë§Œ! ì´ ë§ì„ ë‚¨ê¸°ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 3 ê²°ê³¼(ì„ íƒ)
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
 
 class Block6 :public StoryBlock
@@ -123,106 +129,316 @@ class Block6 :public StoryBlock
 public:
     Block6()
     {
-        script = "±æÀ» °É¾î°¡´Ù ³ª±×³×¸¦ ¸¸³µ´Ù. ±× ³ª±×³×´Â ÀÚ½ÅÀÌ ³»´Â ¼ö¼ö²²³¢¸¦ ¸ÂÃçº¸¶ó°í ÇÑ´Ù. ||¹ø½Ä·ÂÀÌ ¶Ù¾î³­ »ýÁã°¡ ÀÖ´Ù. »ýÁã´Â ÇÑ´Þ¿¡ ÇÑ¹ø¾¿ »õ³¢¸¦ ³ºÀ¸¸ç ÇÑ¹ø¿¡ 10¸¶¸®¾¿ ³º´Â´Ù°í ÇÑ´Ù. ¶Ç ÅÂ¾î³­ »õ³¢´Â »ýÈÄ 2°³¿ù ºÎÅÍ »õ³¢¸¦ ³º´Â´Ù. Áö±Ý ¸· ÅÂ¾î³­ »õ³¢ ÇÑ¸¶¸®¸¦ Å°¿ì±â ½ÃÀÛÇß´Ù¸é, 4°³¿ù µÚ¿¡´Â ¸î¸¶¸®°¡ µÇ¾îÀÖÀ»±î?|| ´ç½ÅÀÇ ´äÀº?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "í•œ ë‚˜ê·¸ë„¤ê°€ ê¸¸ì— ì„œìžˆë‹¤. ê·¸ ë‚˜ê·¸ë„¤ëŠ” ìžì‹ ì˜ ìˆ˜ìˆ˜ê»˜ë¼ë¥¼ ë§žì¶°ë³´ë¼ê³  í•œë‹¤.\në²ˆì‹ë ¥ì´ ë›°ì–´ë‚œ ìƒì¥ê°€ ìžˆë‹¤. ìƒì¥ëŠ” í•œë‹¬ì— í•œë²ˆì”© ìƒˆë¼ë¥¼ ë‚³ìœ¼ë©° í•œë²ˆì— 10ë§ˆë¦¬ì”© ë‚³ëŠ”ë‹¤ê³  í•œë‹¤. ë˜ íƒœì–´ë‚œ ìƒˆë¼ëŠ” ìƒí›„ 2ê°œì›” ë¶€í„° ìƒˆë¼ë¥¼ ë‚³ëŠ”ë‹¤. ì§€ê¸ˆ ë§‰ íƒœì–´ë‚œ ìƒˆë¼ í•œë§ˆë¦¬ë¥¼ í‚¤ìš°ê¸° ì‹œìž‘í–ˆë‹¤ë©´, 4ê°œì›” ë’¤ì—ëŠ” ëª‡ ë§ˆë¦¬ê°€ ë˜ì–´ìžˆì„ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "131"; //¼±ÅÃÁö 1
-        select2 = "31"; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "1"; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "131ë§ˆë¦¬"; //ì„ íƒì§€ 1
+        select2 = "31ë§ˆë¦¬"; //ì„ íƒì§€ 2(ì„ íƒ)
+        select3 = "1ë§ˆë¦¬"; //ì„ íƒì§€ 3(ì„ íƒ)
 
-        result1 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù"; //¼±ÅÃÁö 1 °á°ú
-        result2 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù"; //¼±ÅÃÁö 2 °á°ú(¼±ÅÃ)
-        result3 = "Block8·Î"; //¼±ÅÃÁö 3 °á°ú(¼±ÅÃ)
+        result1 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¢€ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ¬ë§Œ! ì´ ë§ì„ ë‚¨ê¸°ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 1 ê²°ê³¼
+        result2 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¢€ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ¬ë§Œ! ì´ ë§ì„ ë‚¨ê¸°ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 1 ê²°ê³¼
+        result3 = "Block8ë¡œ"; //ì„ íƒì§€ 2 ê²°ê³¼(ì„ íƒ)
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block7 :public StoryBlock
 {
 public:
     Block7()
     {
-        script = "±æÀ» °É¾î°¡´Ù ³ª±×³×¸¦ ¸¸³µ´Ù. ±× ³ª±×³×´Â ÀÚ½ÅÀÌ ³»´Â ¼ö¼ö²²³¢¸¦ ¸ÂÃçº¸¶ó°í ÇÑ´Ù.||ÃÐºÒ 10°³¸¦ Å°°í Ã¥À» ÀÐ´ø ³²ÀÚ°¡ ÀÖ´Ù. ¿­·ÁÀÖ´Â Ã¢¹®¿¡¼­ ¹Ù¶÷ÀÌ ºÒ¾î¿Í 2°³ÀÇ ÃÐºÒÀÌ ²¨Áö°í, ¾ó¸¶ÈÄ ¶Ç´Ù½Ã ¹Ù¶÷ÀÌ ºÒ¾î¿Í ÃÐºÒ 4°³¸¦ ²¨Æ®·È´Ù. ÀÌÈÄ ³²ÀÚ´Â Ã¢¹®À» ´Ý°í ÀáÀ» Ã»Çß´Âµ¥, ±×·¯¸é ´ÙÀ½³¯ ¾ÆÄ§¿¡ ÃÊ°¡ ¸î°³°¡ ³²¾ÆÀÖÀ»±î?|| ´ç½ÅÀÇ ´äÀº?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "í•œ ë‚˜ê·¸ë„¤ê°€ ê¸¸ì— ì„œìžˆë‹¤. ê·¸ ë‚˜ê·¸ë„¤ëŠ” ìžì‹ ì˜ ìˆ˜ìˆ˜ê»˜ë¼ë¥¼ ë§žì¶°ë³´ë¼ê³  í•œë‹¤.\nì´›ë¶ˆ 10ê°œë¥¼ í‚¤ê³  ì±…ì„ ì½ë˜ ë‚¨ìžê°€ ìžˆë‹¤. ì—´ë ¤ìžˆëŠ” ì°½ë¬¸ì—ì„œ ë°”ëžŒì´ ë¶ˆì–´ì™€ 2ê°œì˜ ì´›ë¶ˆì´ êº¼ì§€ê³ , ì–¼ë§ˆí›„ ë˜ë‹¤ì‹œ ë°”ëžŒì´ ë¶ˆì–´ì™€ ì´›ë¶ˆ 4ê°œë¥¼ êº¼íŠ¸ë ¸ë‹¤. ì´í›„ ë‚¨ìžëŠ” ì°½ë¬¸ì„ ë‹«ê³  ìž ì„ ì²­í–ˆëŠ”ë°, ê·¸ëŸ¬ë©´ ë‹¤ìŒë‚  ì•„ì¹¨ì— ì´ˆê°€ ëª‡ ê°œê°€ ë‚¨ì•„ìžˆì„ê¹Œ?""; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "10°³"; //¼±ÅÃÁö 1
-        select2 = "6°³"; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "4°³"; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "10ê°œ"; //ì„ íƒì§€ 1
+        select2 = "6ê°œ"; //ì„ íƒì§€ 2(ì„ íƒ)
+        select3 = "4ê°œ"; //ì„ íƒì§€ 3(ì„ íƒ)
 
-        result1 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù."; //¼±ÅÃÁö 1 °á°ú
-        result2 = "Block8·Î"; //¼±ÅÃÁö 2 °á°ú(¼±ÅÃ)
-        result3 = "Æ²·È³×! ÁöÇý¸¦ Á¶±Ý ´õ ½×À¸¼Å¾ß°Ú±º. ÀÌ¶ó°í ¸»ÇÏ¸ç ³ª±×³×´Â »ç¶óÁ³´Ù."; //¼±ÅÃÁö 3 °á°ú(¼±ÅÃ)
+        result1 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¡°ê¸ˆ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ°. ì´ë¼ê³  ë§í•˜ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 1 ê²°ê³¼
+        result2 = "Block8ë¡œ"; //ì„ íƒì§€ 2 ê²°ê³¼(ì„ íƒ)
+        result3 = "í‹€ë ¸ë„¤! ì§€í˜œë¥¼ ì¡°ê¸ˆ ë” ìŒ“ìœ¼ì…”ì•¼ê² êµ°. ì´ë¼ê³  ë§í•˜ë©° ë‚˜ê·¸ë„¤ëŠ” ì‚¬ë¼ì¡Œë‹¤."; //ì„ íƒì§€ 3 ê²°ê³¼(ì„ íƒ)
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block8 :public StoryBlock
 {
 public:
     Block8()
     {
-        script = "Á¤´äÀÏ¼¼! º¸±âº¸´Ü ¸Ó¸®°¡ ÁÁ±º±×·¡. º¸»óÀ¸·Î ´ç½ÅÀÌ ¿øÇÏ´Â °Í ÇÏ³ª¸¦ µé¾îÁÖ°Ú³×. ¹«¾ùÀ» ¿øÇÏ´Â°¡?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ì •ë‹µì¼ì„¸! ë¨¸ë¦¬ê°€ ì¢‹êµ¬ë§Œ. ë³´ìƒìœ¼ë¡œ ì„ ë¬¼ì„ ì£¼ê² ë„¤. ë¬´ì—‡ì„ ì›í•˜ëŠ”ê°€?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "µ·"; //¼±ÅÃÁö 1
-        select2 = "³»±¸·Â"; //¼±ÅÃÁö 2(¼±ÅÃ)
-        select3 = "Áö·Â"; //¼±ÅÃÁö 3(¼±ÅÃ)
+        select1 = "ëˆ"; //ì„ íƒì§€ 1
+        select2 = "ê±´ê°•"; //ì„ íƒì§€ 2(ì„ íƒ)
+        select3 = "ì§€í˜œ"; //ì„ íƒì§€ 3(ì„ íƒ)
 
-        result1 = "³ª±×³×´Â µ·À»ÁÖ°í ¶°³µ´Ù.."; //µ· +300
-        result2 = "³ª±×³×´Â ½ÅºñÇÑ Æ÷¼ÇÀ» ÁÖ°í ¶°³µ´Ù. Æ÷¼ÇÀ» ¸¶½Ã´Ï Èû°ú Ã¼·ÂÀÌ ¿Ã¶ó°£ ´À³¦ÀÌ µç´Ù."; //hp+3,Èû+2
-        result3 = "³ª±×³×´Â ½ÅºñÇÑ Æ÷¼ÇÀ» ÁÖ°í ¶°³µ´Ù. Æ÷¼ÇÀ» ¸¶½Ã´Ï ¸öÀÇ ¿òÁ÷ÀÓ°ú ¾îÈÖ·ÂÀÌ ¿Ã¶ó°£ ´À³¦ÀÌ µç´Ù."; //Ä«¸®½º¸¶+2,ÀáÀÔ´É·Â+2
+        result1 = "ë‚˜ê·¸ë„¤ëŠ” ëˆì„ ì£¼ê³  ë– ë‚¬ë‹¤."; //ëˆ +300
+        result2 = "ë‚˜ê·¸ë„¤ëŠ” ë¹¨ê°„ ë¬¼ì•½ì„ ê±´ë„¸ë‹¤. ë¬¼ì•½ì„ ë§ˆì‹œë‹ˆ ìƒì²˜ê°€ ë‚«ê³  ê°•í•´ì§„ ëŠë‚Œì´ ë“ ë‹¤."; //hp+3,íž˜+2
+        result3 = "ë‚˜ê·¸ë„¤ëŠ” íŒŒëž€ ë¬¼ì•½ì„ ê±´ë„¸ë‹¤. ë¬¼ì•½ì„ ë§ˆì‹œë‹ˆ ë¨¸ë¦¬ íšŒì „ì´ ë¹¨ë¼ì§„ ëŠë‚Œì´ ë“ ë‹¤."; //ì¹´ë¦¬ìŠ¤ë§ˆ+2,ìž ìž…ëŠ¥ë ¥+2
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block9 :public StoryBlock
 {
 public:
     Block9()
     {
-        script = "±æÀ» °È´Ù Àû±¹ÀÇ ¼øÂû´ë¿øµéÀÇ ¹«ÀÛÀ§ °Ë¹®À» ´çÇÏ¿´´Ù. ´ÙÇàÈ÷ ¾Æ¹«·± ¹®Á¦ ¾øÀÌ ³Ñ¾î°¡ ±×µéÀ» Áö³ªÄ¡°í ÀÖ´Âµ¥ °©ÀÚ±â ¼øÂû´ë¿øµéÀÌ ¸ØÃß¶ó°í ¼Ò¸®Ä£´Ù. µéÅ²°ÍÀÎ°¡?"; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ì êµ­ì˜ ìˆœì°°ëŒ€ì›ì„ ë§Œë‚¬ë‹¤! ë‹¤í–‰ížˆ ì§€ë‚˜ê°€ë‚˜ ì‹¶ì—ˆì§€ë§Œ ìˆœì°°ëŒ€ì›ì´ ë©ˆì¶”ë¼ ë§ì„ ê±´ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "È²±ÞÈ÷ µµ¸ÁÄ£´Ù.";
-        select2 = "¹«½¼ÀÏÀÎÁö µÚµ¹¾Æ º»´Ù."; 
-        select3 = "±×µéÀ» °ø°ÝÇÑµÚ ´Þ¾Æ³­´Ù."; 
+        select1 = "í™©ê¸‰ížˆ ë„ë§ì¹œë‹¤.";
+        select2 = "ë¬´ìŠ¨ ì¼ì¸ì§€ ë’¤ëŒì•„ ë³¸ë‹¤."; 
+        select3 = "ê·¸ë“¤ì„ ê³µê²©í•œë‹¤."; 
 
-        result1 = "±×µéÀÇ ¸ØÃß¶ó´Â ¼Ò¸®¸¦ ¹«½ÃÇÏ°í È²±ÞÈ÷ ´Þ¾Æ³µ´Ù."; //Ä§Åõ·Â 1+
-        result2 = "±×µéÀº µ·À» ÁÖ¸ç Èê¸®Áö ¸»°í Àß °£¼öÇÏ¶ó°í ¸»ÇÑµÚ ¶°³µ´Ù. ³» µ·Àº ¾Æ´ÏÁö¸¸ ¾îÂ¶µç º° Å»¾øÀÌ ³Ñ¾î°¬´Ù."; //µ·+100
-        result3 = "±×µé¿¡°Ô µû¶óÀâÈ÷Áö ¾Êµµ·Ï °ø°ÝÇÑ µÚ ´Þ¾Æ³µ´Ù. °ø°Ý°úÁ¤¿¡¼­ ¾à°£ÀÇ ºÎ»óÀ» ÀÔ¾ú´Ù."; //hp-1, Ä§Åõ·Â 1+
+        result1 = "ì êµ­ì˜ êµ°ì¸ê³¼ ë§ˆì£¼ì¹  ì´ìœ ëŠ” ì—†ë‹¤. í™©ê¸‰ížˆ ìžë¦¬ë¥¼ ë–´ë‹¤. ë‹¬ë¦¬ê¸°ê°€ ë¹¨ë¼ì§„ ëŠë‚Œì´ë‹¤."; //ì¹¨íˆ¬ë ¥ 1+
+        result2 = "ê·¸ë“¤ì€ ëˆì„ ì£¼ë©° í˜ë¦¬ì§€ ë§ë¼ê³  í•´ì¤€ë‹¤. ë‚´ ëˆì€ ì•„ë‹ˆì˜€ì§€ë§Œ ë°›ê³  ë¬´ì‚¬ížˆ ë„˜ì–´ê°”ë‹¤."; //ëˆ+100
+        result3 = "ê³µê²©í•˜ê³  ë‹¬ì•„ë‚¬ë‹¤. ê³µê²©ê³¼ì •ì—ì„œ ì•½ê°„ì˜ ë¶€ìƒì„ ìž…ì—ˆìœ¼ë‚˜ ëª¸ì´ ë¹¨ë¼ì§„ ëŠë‚Œì´ë‹¤."; //hp-1, ì¹¨íˆ¬ë ¥ 1+
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block10 :public StoryBlock
 {
 public:
     Block10()
     {
-        script = "½£À» Áö³ª´øÁß »¡°£»öÀÇ »ç½¿ »ÔÃ³·³ »ý±ä ¹ö¼¸À» ¹ß°ßÇß´Ù. ±×¿Í µ¿½Ã¿¡ ³·¼±»ç¶÷ ¶ÇÇÑ ¸¶ÁÖÃÆ´Âµ¥ ±× ³²¼º ½Ä¹°ÇÐÀÚÃ³·³ º¸ÀÌ°í ½£À» ÀÚÁÖ µå³ªµéÀº °Í Ã³·³ º¸ÀÎ´Ù. ÀÌ ³²¼ºÀº ±× ¹ö¼¸À» ÀÚ½Å¿¡°Ô ÆÈ¶ó´Â Á¦¾ÈÀ» °Ç³Þ´Ù."; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ìˆ²ì—ì„œ ì˜ë¬¸ì˜ ë¹¨ê°„ ë²„ì„¯ì„ ë°œê²¬í–ˆë‹¤. ë‚¯ì„  ì‚¬ëžŒì´ ìžì‹ ì´ ì‹ë¬¼í•™ìžë¼ ì†Œê°œí•˜ë©° ê·¸ ë²„ì„¯ì„ ë‹¬ë¼ê³  í•œë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "¹ö¼¸ÀÇ »ö±ò°ú ¸ð¾ç, ³·¼± »ç¶÷ÀÇ ¹ÝÀÀÀ» º¸´Ï ºñ½Ñ°ÍÀÌ Æ²¸²¾ø´Ù. Áï½Ã ÁÖ¿ö¼­ °¥±æ °£´Ù.";
-        select2 = "³·¼±ÀÌÀÇ Á¦¾ÈÀ» ¹Þ¾Æµå¸°´Ù."; 
-        select3 = "µ·Àº µÆÀ¸´Ï ¾µ¸¸ÇÑ Á¤º¸°¡ ÀÖÀ¸¸é ¾Ë·Á´Þ¶ó°í ¿äÃ»ÇÑ´Ù."; 
+        select1 = "ë¹„ì‹¼ ë²„ì„¯ì¸ ê²ƒ ê°™ìœ¼ë‹ˆ ì±™ê¸´ë‹¤.";
+        select2 = "ê·¸ì—ê²Œ ë²„ì„¯ì„ ë„˜ê¸´ë‹¤."; 
+        select3 = "ë²„ì„¯ì„ ì¤„í…Œë‹ˆ ë²„ì„¯ì— ëŒ€í•´ ì•Œë ¤ë‹¬ë¼ê³  í•œë‹¤."; 
 
-        result1 = "±× ¹ö¼¸À» Áý°í³ª¼­ ¾ó¸¶ Áö³ªÁö ¾Ê¾Æ »ó´çÇÑ °íÅëÀ» ´À²¸ ¹ö¼¸À» ¹ö·È´Ù. ±× ¹ö¼¸Àº ¸Íµ¶¹ö¼¸ÀÎ ºÓÀº»Ô»ç½¿¹ö¼¸ ÀÌ¾ú´Ù."; //Ã¼·Â-4
-        result2 = "³·¼± »ç¶÷Àº ¾à°£ÀÇ µ·À»ÁÖ°í Àå°©À» ³¤Ã¤ ±× ¹ö¼¸À» Ã¤ÃëÇØ °¬´Ù."; //µ·+
-        result3 = "³·¼± »ç¶÷Àº ±× ¹ö¼¸ÀÌ ¸Å¿ì °­ÇÑ µ¶À» °¡Áö°í ÀÖ´Â ¹ö¼¸ÀÌ¶õ°É ¾Ë·ÁÁÖ¾ú°í, ±ÙÃ³¿¡ ¼ºÁúÀÌ ³ª»Û ±ºÀÎµéÀÇ °ÅÁ¡ÀÌ ÀÖÀ¸´Ï ÇÇÇØ°¡¶ó°í ¾Ë·ÁÁÖ¾ú´Ù."; //Á¤º¸·Â 1+
+        result1 = "ê·¸ë¥¼ ë‚´ì«“ê³  ë²„ì„¯ì„ ì§‘ìžë§ˆìž ê°•í•œ ê³ í†µì´ ëŠê»´ì¡Œë‹¤. ì•„ë¬´ëž˜ë„ ë§¹ë…ë²„ì„¯ì„ ë§Œì§„ ê²ƒ ê°™ë‹¤."; //ì²´ë ¥-4
+        result2 = "ë‚¯ì„  ì‚¬ëžŒì€ ëˆì„ ì£¼ê³  ëŠ¥ìˆ™í•˜ê²Œ ë²„ì„¯ì„ ì±„ì§‘í•´ê°”ë‹¤."; //ëˆ+
+        result3 = "ê·¸ëŠ” ê·¸ ë²„ì„¯ì´ ê°•í•œ ë…ë²„ì„¯ìž„ì„ ì•Œë ¤ì£¼ê³  ë‹¤ì–‘í•œ ì •ë³´ë¥¼ ì•Œë ¤ì¤¬ë‹¤. ì§€ì‹ì´ ëŠ˜ì—ˆë‹¤."; //ì •ë³´ë ¥ 1+
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
+
 class Block11 :public StoryBlock
 {
 public:
     Block11()
     {
-        script = "ÀÛÀº ¸¶À»¿¡¼­ ½¬´ø µµÁß Å« ¼Ò¶õÀÌ ÀÏ¾î³­ °ÍÀ» ¸ñ°ÝÇß´Ù. ¼¼±ÝÀ» °È´Â Â¡¼ö¿øÀÌ ¼¼±ÝÀ» ³¾¼ö ¾ø´Â ÇÏÃþ¹ÎÀÇ ¾Æ¹öÁöÀÇ À¯Ç°À¸·Î º¸ÀÌ´Â ¸ñ°ÉÀÌ¸¦ ¾Ð·ùÇÑ »óÅÂÀÌ°í ÇÏÃþ¹ÎÀº ´«¹°À» Èê¸®°í ÀÖ¾ú´Ù. Â¡¼ö¿øÀÇ ¸¶Â÷¿¡¼­ ±× ¹°°ÇÀ» ÈÉÄ¥ ¼ö ÀÖÀ»°Í °°´Ù."; //½ºÅ©¸³Æ® ÃÊ±âÈ­
+        script = "ê±´ë‹¬íŒ¨ê°€ ì‹œë¯¼ë“¤ì˜ ë¬¼ê±´ì„ ë¹¼ì•—ê³  ìžˆë‹¤. ê±´ë‹¬íŒ¨ì˜ ë§ˆì°¨ì—ì„œ ë¬¼ê±´ì„ í›”ì¹  ìˆ˜ ìžˆì„ ê²ƒ ê°™ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
 
-        select1 = "À¯Ç°À» ÈÉÃÄ ´Ù½Ã µ¹·ÁÁØ´Ù.";
-        select2 = "¸Å¿ì ÀÌ»Û ¸ñ°ÉÀÌ ÀÌ´Ï »ó´çÈ÷ ºñ½Ñ°ª¿¡ ÆÈ ¼ö ÀÖÀ»°Í°°´Ù. À¯Ç°À» ÈÉÃÄ ´Ù¸¥ »óÀÎ¿¡°Ô ÆÇ´Ù."; 
-        select3 = "À¯Ç°¸»°í ´Ù¸¥ ¹°°ÇÀ» Ã£¾Æº»´Ù."; 
+        select1 = "ê±´ë‹¬ì„ ê³µê²©í•´ ë¬¼ê±´ì„ ë˜ì°¾ì•„ ì¤€ë‹¤.";
+        select2 = "ë¬¼ê±´ì„ ëºì•„ ìƒì¸ì—ê²Œ ë„˜ê¸´ë‹¤."; 
+        select3 = "ê±´ë‹¬íŒ¨ì˜ ë§ˆì°¨ë¥¼ ë’¤ì ¸ë³¸ë‹¤."; 
 
-        result1 = "ÇÏÃþ¹ÎÀº ¿¬½Å °¨»çÀÇ ÀÎ»ç¸¦ Ç¥ÇÏ¸ç ¶°³µ´Ù."; //Ä«¸®½º¸¶ +
-        result2 = "¿¹»ó´ë·Î »ó´çÈ÷ ³ôÀº°ªÀ» ¹Þ¾Ò´Ù.";//µ· 300
-        result3 = "Ä§ÅõÇÒ·Á´Â µµ½ÃÀÇ ³»ºÎ Áöµµ¸¦ Ã£¾Ò´Ù."; //Á¤º¸·Â 2+ 
+        result1 = "ì‚¬ëžŒë“¤ì´ ì—°ì‹  ê°ì‚¬ë¥¼ í‘œí•œë‹¤. í‰íŒì´ ì¢‹ì•„ì¡Œë‹¤."; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "ë†’ì€ ê°’ì— íŒ” ìˆ˜ ìžˆì—ˆë‹¤. ë§Žì€ ëˆì„ ì–»ì—ˆë‹¤.";//ëˆ 300
+        result3 = "ì êµ­ì˜ ì§€ë„ë¥¼ ì–»ì—ˆë‹¤. ì •ë³´ê°€ ëŠ˜ì—ˆë‹¤."; //ì •ë³´ë ¥ 2+ 
 
     }
-    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //ÇÃ·¹ÀÌ¾î °´Ã¼ ÂüÁ¶·Î °ª º¯°æ °¡´É
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class Block12 :public StoryBlock
+{
+public:
+    Block12()
+    {
+        script = "ë…¸ìƒì ì„ ë§Œë‚¬ë‹¤. ì–´ì„œ ì˜µì‡¼! \"1ì¸ 1ë¬¼í’ˆ êµ¬ë§¤ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤. ì‹ ì¤‘ížˆ ê³¨ë¼ë³´ì„¸ìš”!\""; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ì œëª©ì´ ì§€ì›Œì§„ ì±…ì„ ì‚°ë‹¤.";
+        select2 = "íš¨ëŠ¥ì„ ì•Œ ìˆ˜ ì—†ëŠ” í¬ì…˜ì„ ì‚°ë‹¤."; 
+        select3 = "ë”±ížˆ ì‚´ ë¬¼ê±´ì´ ì—†ì–´ë³´ì´ë‹ˆ ê·¸ëƒ¥ ê°„ë‹¤."; 
+
+        result1 = ""; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "";//ëˆ 300
+        result3 = "ì‚´ ë¬¼ê±´ì´ ì—†ê³  ì‹œê°„ë„ ì—†ìœ¼ë‹ˆ ë°œê±¸ìŒì„ ìž¬ì´‰í–ˆë‹¤.";
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class Block13 :public StoryBlock
+{
+public:
+    Block13()
+    {
+        script = "ì•…ë§ˆê°€ ëˆˆ ì•žì— ë‚˜íƒ€ë‚˜ ë‚˜ì—ê²Œ ê±°ëž˜ë¥¼ ì œì•ˆí•œë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "íž˜ì„ ë‹¬ë¼ê³  í•œë‹¤.";
+        select2 = "ì§€ì‹ì„ ë‹¬ë¼ê³  í•œë‹¤."; 
+        select3 = "ë¬´ì‹œí•œë‹¤."; 
+
+        result1 = "íž˜ì„ ì–»ì—ˆë‹¤. ì•…ë§ˆì™€ ê±°ëž˜í•´ í‰íŒì´ ì•ˆ ì¢‹ì•„ì§ˆ ê²ƒ ê°™ë‹¤."; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "ì§€ì‹ì„ ì–»ì—ˆë‹¤. ì•…ë§ˆì™€ ê±°ëž˜í•´ í‰íŒì´ ì•ˆ ì¢‹ì•„ì§ˆ ê²ƒ ê°™ë‹¤.";//ëˆ 300
+        result3 = "ë’¤ì—ì„œ ì•…ë§ˆì˜ íëŠë¼ëŠ” ì†Œë¦¬ê°€ ë“¤ë¦°ë‹¤. ì•…ë§ˆë¥¼ ìš¸ë ¤ ëª…ì„±ì´ ì˜¬ë¼ê°”ë‹¤."; //ì •ë³´ë ¥ 2+ 
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class Block14 :public StoryBlock
+{
+public:
+    Block14()
+    {
+        script = "ì•Œ ìˆ˜ ì—†ëŠ” ìƒìžê°€ ê¸¸ê°€ì— ë–¨ì–´ì ¸ìžˆë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ì—´ì–´ë³¸ë‹¤.";
+        select2 = "ë¬´ì‹œí•œë‹¤."; 
+
+        result1 = ""; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "ìœ„í—˜ì„ ê°ìˆ˜í•˜ê³  ê´œížˆ ì—´ì–´ë³¼ í•„ìš”ëŠ” ì—†ì„ ê±° ê°™ë‹¤."
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class Block15 :public StoryBlock
+{
+public:
+    Block15()
+    {
+        script = "ì†Œì›ì„ ì´ë¤„ì£¼ëŠ” ì—°ëª»ì´ë‹¤. ì—°ëª»ì—” ì‚¬ëžŒë“¤ì´ ë˜ì§„ ë™ì „ì´ ë§Žì•„ë³´ì¸ë‹¤. ì–´ë–»ê²Œ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ëª¸ì´ ì¢‹ì•„ì§€ê²Œ í•´ë‹¬ë¼ê³  ì†Œì›ì„ ë¹ˆë‹¤.";
+        select2 = "ìž„ë¬´ë¥¼ ì„±ê³µí•  ìˆ˜ ìžˆê²Œ í•´ë‹¬ë¼ê³  ì†Œì›ì„ ë¹ˆë‹¤."; 
+        select3 = "ì—°ëª»ì— ìžˆëŠ” ë™ì „ì„ ì±™ê¸´ë‹¤.";
+
+        result1 = "ê±´ê°•í•´ì§€ëŠ” ëŠë‚Œì´ ë“ ë‹¤. ì‹ ì²´ëŠ¥ë ¥ì´ ì˜¬ë¼ê°„ ëŠë‚Œì´ë‹¤."; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "í•  ìˆ˜ ìžˆë‹¤ëŠ” ìžì‹ ê°ì´ ì°¨ì˜¤ë¥¸ë‹¤. ì”©ì”©í•˜ê²Œ ì—¬ì •ì„ ê³„ì†í•œë‹¤."
+        result3 = "ì†Œì›ê°™ì€ ê±´ ë¯¿ì§€ ì•ŠëŠ”ë‹¤. ì‹¤ë¦¬ì ìœ¼ë¡œ ëˆì„ ì±™ê²¼ë‹¤."
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockChoiceStat :public StoryBlock
+{
+public:
+    BlockChoiceStat()
+    {
+        script = "ëª¨í—˜ì„ ì‹œìž‘í•˜ê¸°ì „ì— ë¬¼ì–´ë³¼ê²Œìš”. ë‹¹ì‹ ì€ ëˆ„êµ¬ì¸ê°€ìš”?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ì €ëŠ” ë›°ì–´ë‚œ í•™ìžìž…ë‹ˆë‹¤.";
+        select2 = "ì €ëŠ” ìš©ë§¹í•œ êµ°ì¸ìž…ë‹ˆë‹¤."; 
+        select3 = "ì €ëŠ” ëˆë§Žì€ ë°±ìˆ˜ìž…ë‹ˆë‹¤.";
+
+        result1 = "ê±´ê°•í•´ì§€ëŠ” ëŠë‚Œì´ ë“ ë‹¤. ì‹ ì²´ëŠ¥ë ¥ì´ ì˜¬ë¼ê°„ ëŠë‚Œì´ë‹¤."; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = "í•  ìˆ˜ ìžˆë‹¤ëŠ” ìžì‹ ê°ì´ ì°¨ì˜¤ë¥¸ë‹¤. ì”©ì”©í•˜ê²Œ ì—¬ì •ì„ ê³„ì†í•œë‹¤."
+        result3 = "ì†Œì›ê°™ì€ ê±´ ë¯¿ì§€ ì•ŠëŠ”ë‹¤. ì‹¤ë¦¬ì ìœ¼ë¡œ ëˆì„ ì±™ê²¼ë‹¤."
+
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockStoryStart :public StoryBlock
+{
+public:
+    BlockStoryStart()
+    {
+        script = "ë‹¹ì‹ ì˜ ë‚˜ë¼ëŠ” ì‚¬ì´ê°€ ì¢‹ì§€ ì•Šì€ ë‚˜ë¼ì™€ ê´‘í™œí•œ ìˆ²ì„ ê²½ê³„ë¡œ ìžˆìŠµë‹ˆë‹¤.\nì–´ëŠë‚  ì „ìŸì˜ ê¸°ë¯¸ë¥¼ ëˆˆì¹˜ì±ˆ êµ­ì™•ì€ ë‹¹ì‹ ì„ ì êµ­ìœ¼ë¡œ ë³´ë‚´ ì „ìŸì˜ ì •ë³´ë¥¼ ì–»ì–´ì˜¤ë¼ ëª…ë ¹í–ˆìŠµë‹ˆë‹¤.\në‹¹ì‹ ì€ ì‚¬ëª…ê°ì„ ê°€ì§€ê³  ì—¬ì •ì„ ë– ë‚©ë‹ˆë‹¤."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStory :public StoryBlock
+{
+public:
+    BlockChoiceStat()
+    {
+        script = "ë“œë””ì–´ ì êµ­ì— ë„ì°©í–ˆë‹¤. ì–´ë””ë¡œ ê°€ì•¼ ì „ìŸì— ëŒ€í•œ ì •ë³´ë¥¼ ì–»ì„ ìˆ˜ ìžˆì„ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ì„±ìœ¼ë¡œ ê°€ë³¸ë‹¤.";
+        select2 = "ì•”ì‹œìž¥ìœ¼ë¡œ ê°€ë³¸ë‹¤."; 
+
+        result1 = ""; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = ""
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStoryCastle :public StoryBlock
+{
+public:
+    BlockMainStoryCastle()
+    {
+        script = "ì„± ì •ë¬¸ ê·¼ì²˜ì— ë„ì°©í•˜ìž ê²½ë¹„ë³‘ë“¤ì´ ë³´ì¸ë‹¤. ì–´ë””ë¡œ ê°€ì•¼ í• ê¹Œ?"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+
+        select1 = "ì •ë¬¸ìœ¼ë¡œ ê°€ìž.";
+        select2 = "ê°œêµ¬ë©ì„ ì°¾ì•„ë³´ìž."; 
+
+        result1 = ""; //ì¹´ë¦¬ìŠ¤ë§ˆ +
+        result2 = ""
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStoryCastleDoor :public StoryBlock
+{
+public:
+    BlockMainStoryCastleDoor()
+    {
+        script = "ì •ë¬¸ì— ë“¤ì–´ì„œìž ê²½ë¹„ë³‘ë“¤ì´ ë³´ì¸ë‹¤."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStoryCastleHole :public StoryBlock
+{
+public:
+    BlockMainStoryCastleHole()
+    {
+        script = "ì„±ì„ í•œë°”í€´ëŒì•„ ë“¤ì–´ê°ˆë§Œí•œ ê°œêµ¬ë©ì„ ì°¾ì•˜ë‹¤."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStoryFinal :public StoryBlock
+{
+public:
+    BlockMainStoryFinal()
+    {
+        script = "ì •ë³´ë¥¼ ì°¾ì•˜ë‹¤! ì´ì œ ê°€ì§€ê³  ëŒì•„ê°€ìž!"; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockMainStoryMarket :public StoryBlock
+{
+public:
+    BlockMainStoryMarket()
+    {
+        script = "ì•”ì‹œìž¥ì´ì§€ë§Œ ìƒê°ë³´ë‹¤ í™œê¸°ì°¨ê³  ì‹œëŒë²…ì í•œ ë¶„ìœ„ê¸°ì´ë‹¤. ì •ë³´ë¥¼ ì°¾ì•„ë³´ìž."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockEndingVictory :public StoryBlock
+{
+public:
+    BlockEndingVictory()
+    {
+        script = "ë‹¹ì‹ ì´ ì–»ì€ ì •ë³´ë¡œ ì„±ê³µì ìœ¼ë¡œ ì „ìŸì„ ëŒ€ë¹„í•´ ìŠ¹ì „í–ˆìŠµë‹ˆë‹¤!\në‹¹ì‹ ì€ ë§Žì€ ë¶€ì™€ ëª…ì„±ì„ ì–»ì—ˆê³  ë‹¹ì‹ ì˜ ì´ë¦„ì€ ì˜¤ëž«ë™ì•ˆ ê¸°ì–µë  ê²ƒìž…ë‹ˆë‹¤."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockEndingDefeat :public StoryBlock
+{
+public:
+    BlockEndingDefeat()
+    {
+        script = "ë‹¹ì‹ ì€ ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ê¸´ í–ˆìœ¼ë‚˜ ê±°ì§“ ì •ë³´ì˜€ìŠµë‹ˆë‹¤! ìž˜ëª»ëœ ì •ë³´ë¡œ ì „ìŸì„ ì¤€ë¹„í•œ ë‚˜ë¨¸ì§€ ì „ìŸì—ì„œ íŒ¨ë°°í–ˆê³ ,\nì‚¬ëžŒë“¤ì€ ë‹¹ì‹ ì—ê²Œ ì±…ìž„ì„ ë¬»ê¸° ì‹œìž‘í–ˆìœ¼ë©° ë‹¹ì‹ ì˜ ì—¬ì •ì€ ê°ì˜¥ì— ê°‡ížˆë©° ë§ˆë¬´ë¦¬ë˜ì—ˆìŠµë‹ˆë‹¤."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
+};
+
+class BlockEndingDie :public StoryBlock
+{
+public:
+    BlockEndingDie()
+    {
+        script = "hpê°€ ëª¨ë‘ ë‹³ì•˜ìŠµë‹ˆë‹¤!\në‹¹ì‹ ì˜ ëª¨í—˜ì€ ì—¬ê¸°ê¹Œì§€ì¸ê°€ë³´êµ°ìš”...."; //ìŠ¤í¬ë¦½íŠ¸ ì´ˆê¸°í™”
+    }
+    virtual void storyBlockFunction(Player& player, StoryQueue* queue); //í”Œë ˆì´ì–´ ê°ì²´ ì°¸ì¡°ë¡œ ê°’ ë³€ê²½ ê°€ëŠ¥
 };
